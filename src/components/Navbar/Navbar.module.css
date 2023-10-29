@@ -18,11 +18,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 120px;
 }
 
 .logo {
     width: 80px;
     height: 80px;
+}
+
+.logo:hover {
+    cursor: pointer;
+    opacity: 0.6;
 }
 
 .navbar li {
