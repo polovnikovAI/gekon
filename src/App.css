@@ -37,6 +37,7 @@ img {vertical-align: top;}
 h1,h2, h3, h4, h5, h6 {font-style: inherit; font-weight: 400;}
 /*---------------------Обнуление стилей--------------------------*/
 body {
-    background-color: #08e091;
-    height: 2000px;
+    /* background-color: #08e091; */
+    background-color: #fff;
+    height: 3500px;
 }

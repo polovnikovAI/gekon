@@ -1,0 +1,39 @@
+.carousel {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.sliderTitle {
+    display: flex;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background: linear-gradient(45deg, #8ff1ce 33%, #02cf84 66%,  #017d508a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 50px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.unusualPhoto {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 15px;
+    margin-right: 250px;
+}
+.unusualPhoto:nth-last-child(-n+1) {
+    margin-right: 25px;
+}
+.unusualPhoto img {
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.8);
+    border-radius: 24px;
+}
+
+
+.photo {
+    border-radius: 24px;
+    object-fit: cover;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);;
+}
