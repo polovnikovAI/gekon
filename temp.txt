@@ -1,0 +1,32 @@
+---Раздел КАРУСЕЛЬ
+
+фотки на карусель:
+Собственное производство
+/production/BKL_0873.jpg
+/production/BKL_9167.jpg или 9126
+/production/BKL_0861.jpg
+/TLM12015/TL+M1/1600/BKL9612.jpg
+/restorationDiatone2017/BKL_4930.jpg
+
+
+---Раздел КОЛОНКИ
+/layouts/98IkUBjhhaQ.jpg
+gveb4Q0UD5M.jpg
+IvDBO5gYMpk.jpg
+
+
+---Раздел услуги
+Восстановление акустических систем
+/restorationDiatone2017/2017-chop-chop-1020.jpg
+/restorationGrunding2016/BKL_7296.JPG
+
+Мойка винила
+заглушка
+заглушка
+
+
+
+
+
+на коммит:
+completed module carousel
