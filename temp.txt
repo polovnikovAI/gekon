@@ -29,4 +29,4 @@ IvDBO5gYMpk.jpg
 
 
 на коммит:
-completed route to gallery
+completed route to gallery, component restructuring
