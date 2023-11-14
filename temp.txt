@@ -29,4 +29,4 @@ IvDBO5gYMpk.jpg
 
 
 на коммит:
-completed module carousel
+completed route to gallery

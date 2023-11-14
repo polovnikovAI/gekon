@@ -4,6 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import cl from './Carousel.module.css';
 import './Carousel.css';
+import MyButton from '../UI/MyButton/MyButton';
+import { Link } from 'react-router-dom';
 
 const Carousel = () => {
     const settings = {
@@ -55,6 +57,11 @@ const Carousel = () => {
                 <img src={require('../../photos/restorationDiatone2017/BKL_4930.jpg')} alt='Upload error' className={cl.photo} />
                 <img src={require('../../photos/TLM12015/TLM1/1600/BKL_9612.jpg')} alt='Upload error' className={cl.photo} />
             </Slider>
+            <div className={cl.toGallery}>
+                <Link to="/gallery">
+                    <MyButton>Перейти в галерею</MyButton>
+                </Link>
+            </div>
         </div>
     );
 };

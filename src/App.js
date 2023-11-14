@@ -1,16 +1,12 @@
-import './App.css';
-import About from './components/About/About';
-import Carousel from './components/Carousel/Carousel';
-import Navbar from './components/Navbar/Navbar';
+import { BrowserRouter } from 'react-router-dom';
+// import './App.css';
+import AppRouter from './components/AppRouter';
 
 function App() {
     return (
-        <div className='App'>
-            <Navbar />
-            <About />
-            <Carousel />
-        </div>
-        
+        <BrowserRouter>
+            <AppRouter/>
+        </BrowserRouter>
     );
 }
 

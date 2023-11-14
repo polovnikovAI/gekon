@@ -37,3 +37,9 @@
     object-fit: cover;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);;
 }
+
+.toGallery {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
