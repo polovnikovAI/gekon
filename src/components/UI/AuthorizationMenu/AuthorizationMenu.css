@@ -1,0 +1,7 @@
+.visible.active {
+    display: flex;
+}
+
+.visible {
+    display: none;
+}

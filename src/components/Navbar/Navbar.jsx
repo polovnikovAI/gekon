@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../photos/logo/logoHD-transformed.png'
 import cl from './Navbar.module.css'
+import MyButton from '../UI/MyButton/MyButton';
+import GModal from '../UI/GModal/GModal';
+import AuthorizationMenu from '../UI/AuthorizationMenu/AuthorizationMenu';
 
 const Navbar = () => {
+    const buttonStyle = { color: "black" ,
+        marginLeft: "40px",
+        backgroundColor: "#08e091",
+    }
+
+    const [modal , setModal] = useState(false);
+
+
     return (
         <div className={cl.navigation}>
             <img src={logo} alt="Gekon" className={cl.logo} />
@@ -12,7 +23,30 @@ const Navbar = () => {
                 <li>Портфолио</li>
                 <li>Услуги</li>
                 <li>Контакты</li>
+
+
+                <MyButton 
+                    style = {buttonStyle} 
+                    // если пользоваетль авторизован, то переносит в ЛК, если нет, 
+                    // то сначало регистрация/авторизация, а затем при повторном нажатии (или сразу перенос в ЛК)
+                    onClick = {(event) => {
+                        event.preventDefault(); 
+                        setModal(true);
+                    }}>
+                    Личный кабинет
+                </MyButton>
+
+
+
             </div>
+        
+                <GModal 
+                    visible = {modal} 
+                    setVisible={setModal} 
+                >
+                    <AuthorizationMenu/>
+                    
+                </GModal>
         </div>
     );
 };
