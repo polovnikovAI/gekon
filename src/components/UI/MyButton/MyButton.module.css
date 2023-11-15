@@ -1,0 +1,13 @@
+.myButton {
+    padding: 8px 15px;
+    color: #2f705a;
+    border: 1px solid black;
+    border-radius: 6px;
+    font-size: 20px;
+    background: transparent;
+    cursor: pointer;
+}
+.myButton:active {
+    background: #52ffcb;
+    scale: 0.97;
+}

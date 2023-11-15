@@ -14,10 +14,12 @@
     left: 0;
     width: 100%;
     padding: 20px 100px;
+    /* background: rgba(8, 224, 145, 0.2); */
     background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 80px;
 }
 
 .logo {
@@ -25,15 +27,21 @@
     height: 80px;
 }
 
+.logo:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
 .navbar li {
     display: inline;
     position: relative;
     font-size: 22px;
-    color: #fff;
+    color: #000;
     font-weight: 500;
     text-decoration: none;
     margin-left: 40px;
     cursor: pointer;
+    
 }
 
 .navbar li::before {
@@ -43,7 +51,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: #fff;
+    background: lightgreen;
     transition: 0.4s;
 }
 
