@@ -3,6 +3,8 @@ import GInput from "../GInput/GInput";
 import MyButton from "../MyButton/MyButton";
 import classes from "./AuthorizationMenu.module.css";
 import './AuthorizationMenu.css'
+import { Link } from "react-router-dom";
+
 
 const AuthorizationMenu = () => {
     
@@ -15,7 +17,6 @@ const AuthorizationMenu = () => {
     const [registrationVisible , setRegistrationVisible] = useState(false)
 
     const registrationClasses = ['visible']
-    console.log(registrationClasses)
 
     // без этого при нажатии на кнопку он не выводит графу для регистрации
     if (registrationVisible === true) {
@@ -56,8 +57,11 @@ const AuthorizationMenu = () => {
 
                 <div className={classes.button}>
 
+
                     <MyButton style = {buttonStyle}>
-                        Авторизироваться
+
+                        <Link to  = "/profile" style={{color: 'black'}}> Авторизироваться </Link>
+
                     </MyButton>
                     
                     <MyButton style = {buttonStyle}
@@ -71,8 +75,6 @@ const AuthorizationMenu = () => {
                         else {
                             setRegistrationVisible(false);
                         }
-                        console.log(registrationVisible)
-                        console.log(registrationClasses)
 
                     }}>
                         Зарегистрироваться
