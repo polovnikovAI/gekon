@@ -8,7 +8,7 @@ import AuthorizationMenu from '../UI/AuthorizationMenu/AuthorizationMenu';
 const Navbar = () => {
     const buttonStyle = { color: "black" ,
         marginLeft: "40px",
-        backgroundColor: "#08e091",
+        backgroundColor: "#428567",
     }
 
     const [modal , setModal] = useState(false);
