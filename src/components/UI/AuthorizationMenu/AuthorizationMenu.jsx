@@ -15,13 +15,25 @@ const AuthorizationMenu = () => {
     }
 
     const [registrationVisible , setRegistrationVisible] = useState(false)
+    const [passwdVisible , setPasswdVisible] = useState(false)
 
     const registrationClasses = ['visible']
+    const passwdClasses = ['visible']
+    const [mail, setMail] = useState('')
+    const [passwd, setPasswd] = useState('')
+    const [checkPasswd , setCheckPasswd] = useState('')
+
+
 
     // без этого при нажатии на кнопку он не выводит графу для регистрации
     if (registrationVisible === true) {
         registrationClasses.push('active')
     }
+
+    if (passwdVisible === true) { 
+        passwdClasses.push('active')
+    }
+
 
     return (
         <div>
@@ -36,19 +48,24 @@ const AuthorizationMenu = () => {
                     <GInput
                         type = 'text' 
                         placeholder = 'Введите почту' 
+                        onChange = {(event) => setMail(event.target.value)}
                     />
 
                     <GInput
                         type = 'text' 
                         placeholder = 'Введите пароль' 
+                        onChange = {(event) =>setPasswd(event.target.value)}
                     />
 
+                    <div className = {passwdClasses} style={{fontSize: '24px' , color: 'red' }}>
+                        Пароли не совпадают
+                    </div>
 
                     <div className={registrationClasses}>
                         <GInput
                         type = 'text' 
                         placeholder = 'Повторите пароль' 
-                        />
+                        onChange = {(event) =>setCheckPasswd(event.target.value)}/>
                     </div>
 
                 </div>
@@ -58,22 +75,53 @@ const AuthorizationMenu = () => {
                 <div className={classes.button}>
 
 
-                    <MyButton style = {buttonStyle}>
+                    <MyButton style = {buttonStyle}
+                    onClick = {(event) => {
+                        event.preventDefault();
+                        setRegistrationVisible(false);
+                    }}>
 
-                        <Link to  = "/profile" style={{color: 'black'}}> Авторизироваться </Link>
+                        <Link to  = "/profil" style={{color: 'black'}}> Авторизироваться </Link>
 
                     </MyButton>
                     
                     <MyButton style = {buttonStyle}
                     onClick = { (event) => {
-                        event.preventDefault(); 
+                        event.preventDefault();
                         if (registrationVisible === false)
                         {
                             setRegistrationVisible(true);
                             registrationClasses.push('active')
                         }
                         else {
-                            setRegistrationVisible(false);
+                            if (passwd === checkPasswd){
+                                setPasswdVisible(false)
+
+
+                                let userObject = {
+                                    mail: mail,
+                                    passwd: passwd
+                                };
+
+
+                                fetch('/api/registration',{ 
+                                    method: 'POST',
+
+                                    headers: {
+                                        'Content-Type': 'application/json;charset=utf-8'
+                                    },
+
+                                    body: JSON.stringify(userObject)})
+
+                            }
+                            else { 
+                                if (passwdVisible === false){
+                                    setPasswdVisible(true);
+                                    passwdClasses.push('active')
+                                }
+
+                                
+                            }
                         }
 
                     }}>

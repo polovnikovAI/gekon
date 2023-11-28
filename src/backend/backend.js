@@ -15,6 +15,7 @@ app.listen(PORT , ()  => {
 } )
 
 // тут наши странички, откуда будем фетчить ответ
+app.use(express.json())
 app.use('/api' , router)
 
 

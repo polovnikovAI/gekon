@@ -15,7 +15,6 @@ function Profile() {
         historyClasses.push(classes.active)
     }
 
-    console.log(historyClasses)
 
     return (
         <div className={classes.Profile} >
@@ -51,7 +50,6 @@ function Profile() {
                                 setHistoryActive(false)
                             }
 
-                            console.log(historyClasses)
 
                         }}>
                         показать
