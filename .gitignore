@@ -4,7 +4,9 @@ desktop.ini
 
 # dependencies
 /node_modules
+/node_modules/.cache
 /.pnp
+/.vscode
 .pnp.js
 
 # testing

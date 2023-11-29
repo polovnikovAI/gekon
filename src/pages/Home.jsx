@@ -2,6 +2,8 @@ import '../styles/Home.css';
 import About from '../components/About/About';
 import Carousel from '../components/Carousel/Carousel';
 import { useState } from 'react';
+import Footer from '../components/Footer/Footer';
+import Feedback from '../components/Feedback/Feedback';
 
 function Home() {
     console.log('проверка proxy и тест для дальнейшей работы с беком');
@@ -19,6 +21,8 @@ function Home() {
         <div className='App'>
             <About />
             <Carousel />
+            <Feedback />
+            <Footer />
         </div>
         
     );

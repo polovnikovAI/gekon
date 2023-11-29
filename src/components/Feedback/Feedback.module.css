@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    position: relative;
+}
+
+.backPhotoFeedback {
+    width: 80%;
+    height: 40%;
+    border-radius: 20px;
+}
+
+.feedbackForm {
+    position: absolute;
+    z-index: 2;
+    top: 13%;
+    left: 19.5%;
+    border: 1px solid #000;
+    border-radius: 20px;
+    width: 25%;
+    height: 70%;
+    background: rgba(66, 133, 103, 0.2);
+}
+
+.feedbackTitle {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    font-weight: 600;
+}
+
+.feedbackUnit {
+    display: flex;
+    flex-direction: column;
+}
+.feedbackQuestion {
+    font-size: 18px;
+    font-weight: 600;
+    background: #ccc;
+    opacity: 0.9;
+    margin: 20px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    width: 90%;
+}
+.feedbackQuestion:nth-last-child() {
+    background-color: red;
+}
+.feedbackFooter {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 30px 0px 0px;
+}
