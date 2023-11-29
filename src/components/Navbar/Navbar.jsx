@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     const buttonStyle = { color: "black" ,
         marginLeft: "40px",
+        backgroundColor: "#428567",
     }
 
     const [modal , setModal] = useState(false);

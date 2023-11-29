@@ -23,7 +23,7 @@
     margin-bottom: 30px;
     word-spacing: 20px;
     letter-spacing: 5px;
-    color: #08e091;
+    color: #428567;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
 }
 
@@ -40,7 +40,7 @@
 .block__1 {
     width: 400px;
     height: 250px;
-    border: 2px solid #62fdc4;
+    border: 2px solid #428567;
     border-radius: 20px;
     padding: 25px 15px;
     font-size: 22px;
@@ -54,7 +54,7 @@
 .block__2 {
     width: 400px;
     height: 250px;
-    border: 2px solid #62fdc4;
+    border: 2px solid #428567;
     border-radius: 20px;
     padding: 25px 15px;
     font-size: 22px;
@@ -68,7 +68,7 @@
 .block__3 {
     width: 400px;
     height: 250px;
-    border: 2px solid #62fdc4;
+    border: 2.5px solid #428567;
     border-radius: 20px;
     padding: 25px 15px;
     font-size: 22px;
