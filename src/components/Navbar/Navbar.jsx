@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import logo from '../../photos/logo/logoHD-transformed.png'
 import cl from './Navbar.module.css'
 import MyButton from '../UI/MyButton/MyButton';
 import GModal from '../UI/GModal/GModal';
 import AuthorizationMenu from '../UI/AuthorizationMenu/AuthorizationMenu';
+import { Link } from "react-router-dom";
+
 
 const Navbar = () => {
     const buttonStyle = { color: "black" ,
@@ -12,6 +14,18 @@ const Navbar = () => {
     }
 
     const [modal , setModal] = useState(false);
+    const [profileLink, setProfileLink] = useState('');
+    const [link , setLink] = useState((localStorage.getItem('ID') === null) ? false : true);
+    
+    useEffect(()=> {
+        if (link === false) {
+            setProfileLink('')
+        }
+        else if (link === true){
+            setProfileLink('/profile')
+        }
+    }, [link])
+
 
 
     return (
@@ -30,10 +44,17 @@ const Navbar = () => {
                     // то сначало регистрация/авторизация, а затем при повторном нажатии (или сразу перенос в ЛК)
                     onClick = {(event) => {
                         event.preventDefault(); 
-                        setModal(true);
+                        if (localStorage.getItem('ID') === null){
+                            setLink(false)
+                            setModal(true);
+                        }
+                        else{
+                            setLink(true);
+                        }
                     }}>
-                    Личный кабинет
+                    <Link to  = {profileLink} style={{color: 'black'}}> Личный кабинет </Link>
                 </MyButton>
+
 
 
 

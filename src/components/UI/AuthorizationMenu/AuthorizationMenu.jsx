@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GInput from "../GInput/GInput";
 import MyButton from "../MyButton/MyButton";
 import classes from "./AuthorizationMenu.module.css";
@@ -13,16 +13,21 @@ const AuthorizationMenu = () => {
         border: "2px solid black",
         backgroundColor: "rgb(54,209,96)",
     }
-
+// переменные для работы с visible
     const [registrationVisible , setRegistrationVisible] = useState(false)
     const [passwdVisible , setPasswdVisible] = useState(false)
+    const [alertVisible , setAlertVisible] = useState(false)
 
     const registrationClasses = ['visible']
     const passwdClasses = ['visible']
+    const alertClasses = ['visible']
     const [mail, setMail] = useState('')
     const [passwd, setPasswd] = useState('')
     const [checkPasswd , setCheckPasswd] = useState('')
+    // для хранения id в localstorage, для упрощенных запросов для конкретного пользователя
+    const [id, setId] = useState('')
 
+    const [profileLink , setProfileLink] = useState('')
 
 
     // без этого при нажатии на кнопку он не выводит графу для регистрации
@@ -34,6 +39,11 @@ const AuthorizationMenu = () => {
         passwdClasses.push('active')
     }
 
+    if (alertVisible === true) { 
+        alertClasses.push('active')
+    }
+
+
 
     return (
         <div>
@@ -44,6 +54,12 @@ const AuthorizationMenu = () => {
                 </div>
 
                 <div className={classes.input}>
+
+
+                    <div className = {alertClasses} style={{fontSize: '24px' , color: 'red' }}>
+                        Неверно указана почта или пароль
+                    </div>
+
 
                     <GInput
                         type = 'text' 
@@ -78,10 +94,41 @@ const AuthorizationMenu = () => {
                     <MyButton style = {buttonStyle}
                     onClick = {(event) => {
                         event.preventDefault();
-                        setRegistrationVisible(false);
+                        setProfileLink('');
+                        if (registrationVisible === true){
+                            setRegistrationVisible(false);
+                        }
+
+                        else{
+                            fetch(`/api/user/${mail}/${passwd}`)
+                            .then(response => response.json())
+                            .then(response => {
+
+                                if (response.length > 0){
+                                    // если верно указаны данные сохраняем id
+                                    setAlertVisible(false);
+                                    setId(response[0].user_id);
+                                    setProfileLink('/profile');                                        
+                                    localStorage.setItem('ID' , id);
+                                    // чтобы пропала модалка
+                                    window.location.reload(false);
+                                }
+
+                                else{
+                                    if(alertVisible === false){
+                                        setAlertVisible(true);
+                                        alertClasses.push('active')
+                                    }
+                                    localStorage.clear();
+                                }
+                            })
+                            
+
+                        }
+
                     }}>
 
-                        <Link to  = "/profil" style={{color: 'black'}}> Авторизироваться </Link>
+                        <Link to  = {profileLink} style={{color: 'black'}}> Авторизироваться </Link>
 
                     </MyButton>
                     
@@ -94,6 +141,9 @@ const AuthorizationMenu = () => {
                             registrationClasses.push('active')
                         }
                         else {
+
+                            
+
                             if (passwd === checkPasswd){
                                 setPasswdVisible(false)
 

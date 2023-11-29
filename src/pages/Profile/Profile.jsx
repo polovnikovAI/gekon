@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import MyButton from '../../components/UI/MyButton/MyButton';
 import classes from './Profile.module.css';
+import {Link} from 'react-router-dom';
 
 function Profile() {
 
-
+    
     const [historyActive , setHistoryActive] = useState(false);
 
     const historyClasses = [classes.visible]
@@ -15,17 +16,24 @@ function Profile() {
         historyClasses.push(classes.active)
     }
 
-
     return (
         <div className={classes.Profile} >
 
             <div className={classes.greetings}>
                 привет пользователь
+                <MyButton 
+                    onClick={ () =>{ 
+                        localStorage.clear();
+                        // чтобы кнопка менялась получилось только с location.reload
+                        window.location.reload(false);
+                    }}>
+                    <Link to  = '/' style={{color: 'black'}}>выйти из аккаунта</Link>
+                </MyButton>
 
-                <div className={classes.info}>
-                    информация о пользователе
-                </div>
-                
+                <MyButton >
+                    <Link to  = '/' style={{color: 'black'}}> назад </Link>
+                </MyButton>
+
             </div>
 
             <div className={classes.history}>
