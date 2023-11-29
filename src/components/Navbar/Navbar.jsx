@@ -1,10 +1,10 @@
-
 import React, { useState, useEffect} from 'react';
 import logo from '../../photos/logo/gekon_logo_old.png'
 import cl from './Navbar.module.css'
 import MyButton from '../UI/MyButton/MyButton';
 import GModal from '../UI/GModal/GModal';
 import { Link } from 'react-router-dom';
+import AuthorizationMenu from '../UI/AuthorizationMenu/AuthorizationMenu';
 
 const Navbar = () => {
     const buttonStyle = { color: "black" ,
