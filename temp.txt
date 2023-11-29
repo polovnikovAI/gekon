@@ -29,4 +29,9 @@ IvDBO5gYMpk.jpg
 
 
 на коммит:
-completed route to gallery, component restructuring
+updated logo
+logo direct to home
+fixed carousel level
+added footer
+added feedback form
+

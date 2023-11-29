@@ -1,16 +1,15 @@
+
 import React, { useState, useEffect} from 'react';
-import logo from '../../photos/logo/logoHD-transformed.png'
+import logo from '../../photos/logo/gekon_logo_old.png'
 import cl from './Navbar.module.css'
 import MyButton from '../UI/MyButton/MyButton';
 import GModal from '../UI/GModal/GModal';
-import AuthorizationMenu from '../UI/AuthorizationMenu/AuthorizationMenu';
-import { Link } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const buttonStyle = { color: "black" ,
         marginLeft: "40px",
-        backgroundColor: "#08e091",
+        backgroundColor: "#428567",
     }
 
     const [modal , setModal] = useState(false);
@@ -27,10 +26,11 @@ const Navbar = () => {
     }, [link])
 
 
-
     return (
         <div className={cl.navigation}>
-            <img src={logo} alt="Gekon" className={cl.logo} />
+            <Link to="/home">
+                <img src={logo} alt="Gekon" className={cl.logo} />
+            </Link>
             <div className={cl.navbar}>
                 <li>О нас</li>
                 <li>Колонки</li>
@@ -54,10 +54,6 @@ const Navbar = () => {
                     }}>
                     <Link to  = {profileLink} style={{color: 'black'}}> Личный кабинет </Link>
                 </MyButton>
-
-
-
-
             </div>
         
                 <GModal 

@@ -10,6 +10,7 @@
 
 .navigation {
     position: fixed;
+    z-index: 99;
     top: 0;
     left: 0;
     width: 100%;
@@ -23,8 +24,7 @@
 }
 
 .logo {
-    width: 80px;
-    height: 80px;
+    height: 70px;
 }
 
 .logo:hover {
@@ -51,7 +51,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: lightgreen;
+    background: #428567;
     transition: 0.4s;
 }
 
