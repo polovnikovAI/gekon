@@ -1,9 +1,11 @@
-import React, { useState, useEffect} from 'react';
-import logo from '../../photos/logo/gekon_logo_old.png'
-import cl from './Navbar.module.css'
+import React, { useState, useEffect } from 'react';
+import logo from '../../photos/logo/gekon_logo_old.png';
+import cl from './Navbar.module.css';
 import MyButton from '../UI/MyButton/MyButton';
 import GModal from '../UI/GModal/GModal';
 import { Link } from 'react-router-dom';
+import  { Link as LinkScroll } from 'react-scroll';
+import { animateScroll } from 'react-scroll';
 import AuthorizationMenu from '../UI/AuthorizationMenu/AuthorizationMenu';
 
 const Navbar = () => {
@@ -25,18 +27,36 @@ const Navbar = () => {
         }
     }, [link])
 
+    const scrollOptions = {
+        duration: 900,
+        smooth: true,
+    }
+
+    const scrollGekon = (options) => {
+        animateScroll.scrollToTop(options)
+    }
 
     return (
         <div className={cl.navigation}>
             <Link to="/home">
-                <img src={logo} alt="Gekon" className={cl.logo} />
+                <img src={logo} alt="Gekon" className={cl.logo} onClick={() => scrollGekon(scrollOptions)} />
             </Link>
             <div className={cl.navbar}>
-                <li>О нас</li>
-                <li>Колонки</li>
-                <li>Портфолио</li>
-                <li>Услуги</li>
-                <li>Контакты</li>
+                <LinkScroll to="moduleAbout" spy={true} smooth={true} offset={-100} duration={600} className={cl.navbarItem}>
+                    О нас
+                </LinkScroll>
+                <LinkScroll to="moduleSpeakers" spy={true} smooth={true} offset={-110} duration={600} className={cl.navbarItem}>
+                    Колонки
+                </LinkScroll>
+                <LinkScroll to="modulePortfolio" spy={true} smooth={true} offset={-80} duration={600} className={cl.navbarItem}>
+                    Портфолио
+                </LinkScroll>
+                <LinkScroll to="UNDEFINED___MODULE" spy={true} smooth={true} offset={50} duration={600} className={cl.navbarItem}>
+                    Услуги
+                </LinkScroll>
+                <LinkScroll to="moduleContacts" spy={true} smooth={true} offset={-100} duration={600} className={cl.navbarItem}>
+                    Контакты
+                </LinkScroll>
 
                 <MyButton 
                     style = {buttonStyle} 
@@ -52,7 +72,7 @@ const Navbar = () => {
                             setLink(true);
                         }
                     }}>
-                    <Link to  = {profileLink} style={{color: 'black'}}> Личный кабинет </Link>
+                    <Link to={profileLink} style={{color: 'black'}}> Личный кабинет </Link>
                 </MyButton>
             </div>
         

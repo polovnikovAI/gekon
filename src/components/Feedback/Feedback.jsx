@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import cl from './Feedback.module.css';
 import leftPhotoFeedback from '../../photos/JBL4325/DSC_9964.JPG';
-import doneIcon from '../../photos/logo/doneIcon.png';
 import MyInput from '../UI/MyInput/MyInput';
 import MyButton from '../UI/MyButton/MyButton';
 import MyTextArea from '../UI/MyTextArea/MyTextArea';
@@ -29,7 +28,7 @@ const Feedback = () => {
     }
 
     return (
-        <div className={cl.feedbackWrapper}>
+        <div className={cl.feedbackWrapper} id="moduleContacts">
             <div className={cl.container}>
                 <img src={leftPhotoFeedback} alt="" className={cl.backPhotoFeedback} />
                 <div className={cl.feedbackForm}>
