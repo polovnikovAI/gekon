@@ -51,8 +51,6 @@ const Carousel = () => {
                 <img src={require('../../photos/production/BKL_0873.jpg')} alt='Upload error' className={cl.unusualPhoto} />
                 <img src={require('../../photos/production/BKL_0861.jpg')} alt='Upload error' className={cl.unusualPhoto} />
             </div>
-            {/* для пролистывания к карусели и кнопки "перейти в галерею" */}
-            <div id="modulePortfolio"></div>
             <Slider {...settings}>
                 <img src={require('../../photos/production/BKL_9167.jpg')} alt='Upload error' className={cl.photo} />
                 <img src={require('../../photos/production/BKL_9126.jpg')} alt='Upload error' className={cl.photo} />
