@@ -1,0 +1,162 @@
+:root {
+    --line-width: 300px;
+    --content-width: calc(100% - var(--line-width) - 10%);
+    --button-position: 20px;
+    --history-width: 100%;
+    --history-height: 60vh;
+}
+
+.Profile{
+    background-color: rgba(66, 133, 103, 0.1);
+    height: 100vh;
+}
+
+
+.lineImage {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    min-width: var(--line-width);
+    background-image: url('../../photos/RestorationGrundig2016/BKL_7277.JPG');
+    background-size: cover;
+    background-position: right;
+    height: 100%;
+}
+
+
+.line {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    min-width: var(--line-width);
+    height: 100%;
+    background-color: rgba(66, 133, 103, 0.2);
+    border: 2px solid rgba(66, 133, 103);
+    margin-right:100px ;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+.content {
+    position: relative;
+    top: 90px;
+    left: calc(var(--line-width) + 5%);
+    max-width: var(--content-width) ;
+    font-size: 20px;
+    color: #fff;
+}
+
+
+
+
+.greetingsImage{
+    background-image: url('../../photos/restorationDiatone2017/2017-chopchop-1026.jpg');
+    background-size: cover;
+    background-position: right;
+    border-radius: 40px;
+}
+
+.greetings{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    border: 2px solid #428567;
+    padding: 40px;
+    border-radius: 40px ;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background-color: rgba(66, 133, 103, 0.3);
+    font-weight: 600;
+}
+
+
+h1 {
+    margin:0 0 20px 0 ;
+    font-size: 50px;
+}
+
+.history{
+    padding: 20px ;
+    border: 2px solid rgba(66, 133, 103, 0.4);
+    box-shadow: 4px 4px 8px rgba(66, 133, 103, 0.4);
+    background-color: whitesmoke;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    height: var(--history-height);
+    margin-top: 40px;
+    display: flex;
+
+}
+
+.alert-enter {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  .alert-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 500ms, transform 500ms;
+  }
+  .alert-exit {
+    opacity: 1;
+  }
+  .alert-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 500ms, transform 500ms;
+  }
+  
+
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    height: 100px;
+    border: 2px solid rgba(66, 133, 103, 0.4);
+    box-shadow: 4px 4px 8px rgba(66, 133, 103, 0.4);
+    border-radius: 10px;
+    margin-top: 12px;
+}
+
+.botButton {
+    position: fixed;
+    left: var(--button-position);
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.topButton {
+    position: fixed;
+    left: var(--button-position);
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.alert-enter {
+    opacity: 0;
+    transform: scale(0.9);
+}
+.alert-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+}
+.alert-exit {
+    opacity: 1;
+}
+.alert-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+}
+  

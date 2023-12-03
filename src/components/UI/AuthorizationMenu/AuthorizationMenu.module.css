@@ -1,17 +1,20 @@
 
+
+
 .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 .greetings {
-    background-color: rgb(54,209,96);
+    background-color: rgba(66, 133, 103, 0.8);
     width: 600px;
     height: 100px;
     border: 2px solid;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+    box-shadow: 4px 4px 4px rgba(172, 161, 161, 0.8);
     display: flex;
     justify-content: space-around;
     font-size: 30px;
