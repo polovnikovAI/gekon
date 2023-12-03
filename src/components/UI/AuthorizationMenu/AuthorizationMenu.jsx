@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import GInput from "../GInput/GInput";
 import MyButton from "../MyButton/MyButton";
 import classes from "./AuthorizationMenu.module.css";
@@ -8,11 +8,6 @@ import { Link } from "react-router-dom";
 
 const AuthorizationMenu = () => {
     
-    const buttonStyle ={
-        color: "black" , 
-        border: "2px solid black",
-        backgroundColor: "rgb(54,209,96)",
-    }
 // переменные для работы с visible
     const [registrationVisible , setRegistrationVisible] = useState(false)
     const [passwdVisible , setPasswdVisible] = useState(false)
@@ -91,7 +86,7 @@ const AuthorizationMenu = () => {
                 <div className={classes.button}>
 
 
-                    <MyButton style = {buttonStyle}
+                    <MyButton 
                     onClick = {(event) => {
                         event.preventDefault();
                         setProfileLink('');
@@ -132,7 +127,7 @@ const AuthorizationMenu = () => {
 
                     </MyButton>
                     
-                    <MyButton style = {buttonStyle}
+                    <MyButton 
                     onClick = { (event) => {
                         event.preventDefault();
                         if (registrationVisible === false)
