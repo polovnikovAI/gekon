@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import GInput from "../GInput/GInput";
 import MyButton from "../MyButton/MyButton";
 import classes from "./AuthorizationMenu.module.css";

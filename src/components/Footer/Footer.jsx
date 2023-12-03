@@ -1,5 +1,6 @@
 import React from 'react';
 import cl from'./Footer.module.css'
+import { Link as LinkScroll } from 'react-scroll';
 
 const Footer = () => {
     return (
@@ -21,7 +22,7 @@ const Footer = () => {
                     <div className={cl.connections}>
                         <p>Связаться с нами:</p>
                         <div className={cl.connectionRequest}>
-                            Оставить заявку
+                            <LinkScroll to="moduleContacts" spy={true} smooth={true} offset={-100} duration={600}>Оставить заявку</LinkScroll>
                         </div>
                         <div className={cl.connectionNumber}>
                             8 (888) 888-88-88

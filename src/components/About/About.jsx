@@ -3,7 +3,7 @@ import cl from './About.module.css';
 
 const About = () => {
     return (
-        <div className={cl.about}>
+        <div className={cl.about} id="moduleAbout">
             <div className={cl.container}>
                 <div className={cl.about__header}>
                     О НАС

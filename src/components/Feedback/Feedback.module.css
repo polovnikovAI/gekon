@@ -45,6 +45,7 @@
     border-radius: 4px;
     width: 90%;
 }
+
 .feedbackQuestion:nth-last-child() {
     background-color: red;
 }
