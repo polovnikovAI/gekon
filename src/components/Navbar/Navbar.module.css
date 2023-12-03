@@ -55,3 +55,33 @@
 .navbarItem:hover::before {
     width: 100%;
 }
+
+.burgerMenu {
+    width: 50px;
+    height: 40px;
+    margin: 0px 0px 0px 10px
+}
+.burgerMenu {
+    display: none;
+    cursor: pointer;
+}
+.burgerMenu:hover {
+    scale: 0.97;
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 1160px) {
+    .navbarItem {
+        display: none;
+    }
+    .MyButton {
+        display: none;
+    }
+    .burgerMenu {
+        float: right;
+        display: block;
+    }
+    .navbar {
+        width: 100%;
+    }
+}

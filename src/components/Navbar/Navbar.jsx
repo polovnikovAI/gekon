@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../../photos/logo/gekon_logo_old.png';
 import cl from './Navbar.module.css';
-import MyButton from '../UI/MyButton/MyButton';
 import GModal from '../UI/GModal/GModal';
 import { Link } from 'react-router-dom';
 import  { Link as LinkScroll } from 'react-scroll';
 import { animateScroll } from 'react-scroll';
 import AuthorizationMenu from '../UI/AuthorizationMenu/AuthorizationMenu';
+import icon from '../../photos/logo/burger-menu.svg'
 
 const Navbar = () => {
-    const buttonStyle = { color: "black" ,
-        marginLeft: "40px",
-        backgroundColor: "#428567",
-    }
 
     const [modal , setModal] = useState(false);
     const [profileLink, setProfileLink] = useState('');
@@ -54,23 +50,22 @@ const Navbar = () => {
                 <LinkScroll to="moduleContacts" spy={true} smooth={true} offset={-100} duration={600} className={cl.navbarItem}>
                     Контакты
                 </LinkScroll>
-
-                <MyButton 
-                    style = {buttonStyle} 
-                    // если пользоваетль авторизован, то переносит в ЛК, если нет, 
-                    // то сначало регистрация/авторизация, а затем при повторном нажатии (или сразу перенос в ЛК)
+                
+                <span
                     onClick = {(event) => {
                         event.preventDefault(); 
                         if (localStorage.getItem('ID') === null){
-                            setLink(false)
+                            setLink(false);
                             setModal(true);
                         }
                         else{
                             setLink(true);
                         }
-                    }}>
-                    <Link to={profileLink} style={{color: 'black'}}> Личный кабинет </Link>
-                </MyButton>
+                    }}
+                >
+                    <Link to={profileLink}>Личный кабинет</Link>
+                </span>
+                <img src={icon} alt="stripes" className={cl.burgerMenu} />
             </div>
         
                 <GModal 
