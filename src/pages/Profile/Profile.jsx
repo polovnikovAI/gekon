@@ -1,94 +1,120 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MyButton from '../../components/UI/MyButton/MyButton';
-import classes from './Profile.module.css';
 import {Link} from 'react-router-dom';
+import { CSSTransition , TransitionGroup } from 'react-transition-group';
+import './Profile.css'
 
 function Profile() {
 
     
-    const [historyActive , setHistoryActive] = useState(false);
-
-    const historyClasses = [classes.visible]
+    const [orderHistoryActive , setOrderHistoryActive] = useState(false);
+    const [stuffHistoryActive, setStuffHistoryActive] = useState(false);
+    // const historyClasses = ['history']
 
     // без этого при нажатии на кнопку он не выводит данные
-    const testText = [1,2,3,4,5,6,7] 
-    if (historyActive === true) {
-        historyClasses.push(classes.active)
-    }
+    const testText = [{id: 1 , data: 'бочка'},{id: 2 , data: 'бас'},{id: 3 , data: 'пилил'},{id: 4 , data: 'крутил'},]
+    const testText1 = [{id: 1 , data: 'пластинка'},{id: 3 , data: 'пиво'},{id: 4 , data: 'гриб'},]
+    
+    const [historyData,setHistoryData] = useState(null)
+    const [stuffData , setStuffData] = useState(null)
+
+
+    useEffect(()=> {
+        if (historyData === null){
+            setHistoryData(testText);
+            setStuffData(testText1)
+        }
+    }, )
+
+
+
+
 
     return (
-        <div className={classes.Profile} >
+        <div className='Profile'>
 
-            <div className={classes.greetings}>
-                привет пользователь
-                <MyButton 
-                    onClick={ () =>{ 
-                        localStorage.clear();
-                        // чтобы кнопка менялась получилось только с location.reload
-                        window.location.reload(false);
-                    }}>
-                    <Link to  = '/' style={{color: 'black'}}>выйти из аккаунта</Link>
-                </MyButton>
+            <div className='lineImage'>
+                <div className='line'>
+                    <div className='topButton'>
 
-                <MyButton >
-                    <Link to  = '/' style={{color: 'black'}}> назад </Link>
-                </MyButton>
-
-            </div>
-
-            <div className={classes.history}>
-                <div className={classes.fixedHistory}> 
-                    <div className={classes.text}>
-                        история заказов
-                    </div>
-
-                    <MyButton 
-                        style ={{height: '80px' , background: "#08e091" }} 
-                        onClick = {(event) => {
-                            event.preventDefault(); 
-
-
-                            if (historyActive === false){
-
-                                setHistoryActive(true);
-                                historyClasses.push(classes.active)
-                            }
-
-                            else if (historyActive === true){
-                                setHistoryActive(false)
-                            }
-
+                        <MyButton 
+                            onClick = {(event) => {
+                                event.preventDefault(); 
+                                setStuffHistoryActive(false)
+                                setOrderHistoryActive(!orderHistoryActive);
 
                         }}>
-                        показать
-                    </MyButton>
+                            История заказов
+                        </MyButton>
+
+                        <MyButton
+                            style={{marginTop: '12px'}}
+                            onClick = {(event) => {
+                                event.preventDefault();
+                                setOrderHistoryActive(false) 
+                                setStuffHistoryActive(!stuffHistoryActive);
+
+                        }}>
+                            История обращений
+                        </MyButton>
+                    </div>
+
+                    <div className='botButton'>
+                        <MyButton 
+                            onClick={ () =>{ 
+                                localStorage.clear();
+                                // чтобы кнопка менялась получилось только с location.reload
+                                window.location.reload(false);
+                            }}>
+                            <Link to  = '/' style={{color: 'black'}}>выйти из аккаунта</Link>
+                        </MyButton>
+                    </div>
+            </div>
+
+
                 </div>
 
-                {/* на будущее сделаем может быть 
-                анимацию а выводить через fetch().then((item)=> item.map(()=> ....)*/}
+            <div className='content'>
+                <div className='greetingsImage'>
+                    <div className='greetings'>
+                        <h1>личный кабинет</h1>
+                        Привет пользователь, добро пожаловать в личный кабинет. Здесь ты сможешь посмотреть свои обращения и свою историю заказов. 
 
-                <div className={historyClasses}>
+                    </div>
+                </div> 
+                
+                <CSSTransition in={orderHistoryActive} classNames={'alert'} timeout={300} mountOnEnter unmountOnExit>
+                    <ul className='history'>
+                        {testText.map(item => 
+                            <li 
+                                key={item.id}
+                                className='text'>
+                                {item.id} {item.data}
+                            </li>
+                            )}
+                    </ul>
+                </CSSTransition>
 
-                    {testText.map(item => 
-
-                    <div 
-                    className={classes.text}
-                    style={{marginTop: '4px' , width:'720px'}}
-                    key={item}
-                    > 
-                    
-                    {item}
-
-
-                    </div>)}
-
-                </div>
+                <CSSTransition in={stuffHistoryActive} classNames={'alert'} timeout={300} mountOnEnter unmountOnExit>
+                    <ul className='history'>
+                        {testText1.map(item => 
+                            <li 
+                                key={item.id}
+                                className='text'>
+                                {item.id} {item.data}
+                            </li>
+                            )}
+                    </ul>
+                </CSSTransition>
 
             </div>
-        
         </div>
         
     );
 }
 
 export default Profile;
+
+
+
+
