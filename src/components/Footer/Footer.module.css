@@ -58,6 +58,25 @@
     font-size: 18px;
     line-height: 27px;
 }
+.connectionRequest {
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    border-bottom: 2px dotted #000;
+}
+.connectionRequest::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #428567;
+    transition: 0.4s;
+}
+.connectionRequest:hover::before {
+    width: 100%;
+}
 .connections p {
     margin: 15px 0px 0px 10px;
     padding-bottom: 10px;

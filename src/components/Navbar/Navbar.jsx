@@ -48,10 +48,8 @@ const Navbar = () => {
                 <LinkScroll to="moduleSpeakers" spy={true} smooth={true} offset={-110} duration={600} className={cl.navbarItem}>
                     Колонки
                 </LinkScroll>
-                <LinkScroll to="modulePortfolio" spy={true} smooth={true} offset={-80} duration={600} className={cl.navbarItem}>
-                    Портфолио
-                </LinkScroll>
-                <LinkScroll to="UNDEFINED___MODULE" spy={true} smooth={true} offset={50} duration={600} className={cl.navbarItem}>
+
+                <LinkScroll to="moduleSevices" spy={true} smooth={true} offset={-100} duration={600} className={cl.navbarItem}>
                     Услуги
                 </LinkScroll>
                 <LinkScroll to="moduleContacts" spy={true} smooth={true} offset={-100} duration={600} className={cl.navbarItem}>
