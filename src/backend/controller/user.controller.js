@@ -20,9 +20,9 @@ class UserConstroller {
         
         try{
         const {name, email, topic , question} = request.body
-        const newUser = await db.query (`select kursachbpz.technical_support_note($1,$2,$3,$4
+        const newApplication = await db.query (`select kursachbpz.technical_support_note($1,$2,$3,$4
             )` , [name,email, topic , question])
-        response.json(newUser.rows)
+        response.json(newApplication.rows)
         }
 
         catch (e){
@@ -34,9 +34,9 @@ class UserConstroller {
     async historyShow(request, response){
         try { 
         const {userId} = request.params
-        const testData = await db.query('select * from kursachbpz.history where user_id = $1' , [userId])
+        const historyData = await db.query('select * from kursachbpz.history where user_id = $1' , [userId])
 
-        response.json(testData.rows);
+        return response.json(historyData.rows);
         }
 
         catch (e){
@@ -47,8 +47,9 @@ class UserConstroller {
     async stuffShow(request, response){
         try { 
             const {mail} = request.params
-            const testData = await db.query('select * from kursachbpz.techical_support where user_email = $1' , [mail])
-            response.json(testData.rows);
+            const stuffData = await db.query('select * from kursachbpz.technical_support where user_email = $1' , [mail])
+            
+            return response.json(stuffData.rows);
             }
     
             catch (e){

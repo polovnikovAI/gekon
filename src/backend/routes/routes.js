@@ -11,7 +11,7 @@ router.post('/registration', userController.createUser)
 
 router.get('/history/:userId' , userController.historyShow)
 
-router.get('/stuff/:mail' , userController.historyShow)
+router.get('/stuff/:mail' , userController.stuffShow)
 
 router.get('/user/:mail/:passwd' , userController.userCheck)
 

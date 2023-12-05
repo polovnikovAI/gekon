@@ -92,29 +92,12 @@ h1 {
 
 }
 
-.alert-enter {
-    opacity: 0;
-    transform: scale(0.9);
-}
-.alert-enter-active {
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 500ms, transform 500ms;
-}
-.alert-exit {
-    opacity: 1;
-}
-.alert-exit-active {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 500ms, transform 500ms;
-}
 
 
 
 .text {
+    padding-left: 20px;
     display: flex;
-    justify-content: center;
     align-items: center;
     color: black;
     height: 100px;
@@ -124,6 +107,7 @@ h1 {
     margin-top: 12px;
     z-index: 10;
 }
+
 
 .botButton {
     position: fixed;
@@ -147,7 +131,7 @@ h1 {
 
 
 .alert-enter {
-    transform: translateY(50vh);
+    transform: translateY(200px);
     opacity: 0;
 }
 
@@ -162,7 +146,7 @@ h1 {
 }
 
 .alert-exit-active {
-    transform: translateY(50vh);
+    transform: translateY(200px);
     transition: all 400ms ease;
     opacity: 0;
 }

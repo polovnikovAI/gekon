@@ -10,29 +10,27 @@ function Profile() {
     const [orderHistoryActive , setOrderHistoryActive] = useState(false);
     const [stuffHistoryActive, setStuffHistoryActive] = useState(false);
 
-    fetch(`api//history/${localStorage.getItem('ID')}`)
-    .then(response => console.log(response.json()))
-    .then(response => console.log(response))
 
 
     // без этого при нажатии на кнопку он не выводит данные
-    const testText = [{id: 1 , data: 'бочка'},{id: 2 , data: 'бас'},{id: 3 , data: 'пилил'},{id: 4 , data: 'крутил'},]
-    const testText1 = [{id: 1 , data: 'пластинка'},{id: 3 , data: 'пиво'},{id: 4 , data: 'гриб'},]
-    
+
     const [historyData,setHistoryData] = useState([' '])
     const [stuffData , setStuffData] = useState([' '])
 
 
+
+
+
     useEffect(()=> {
-        if (historyData[0] === ' '){
-            setHistoryData(testText)
-        }
-        if (stuffData[0] ===' '){
-            setStuffData(testText1)
-        }
+        fetch(`api/history/${localStorage.getItem('ID')}`)
+        .then(response => response.json())
+        .then(response => setHistoryData(response))
+    
+        fetch(`api/stuff/${localStorage.getItem('Mail')}`)
+        .then(response => response.json())
+        .then(response => setStuffData(response))
 
-    }, [testText, testText1])
-
+    }, [orderHistoryActive, stuffHistoryActive])
 
 
 
@@ -93,25 +91,28 @@ function Profile() {
                 
                 <div className='history'>
                     
-                    <CSSTransition in={orderHistoryActive} classNames={'alert'} timeout={300} mountOnEnter unmountOnExit>
+                    <CSSTransition in={orderHistoryActive} classNames={'alert'} timeout={400} mountOnEnter unmountOnExit>
                         <ul >
                             {historyData.map(item => 
                                 <li 
-                                    key={item.data + item.id}
+                                    key={item.order_id + item.user_id}
                                     className='text'>
-                                    {item.id} {item.data}
+                                    {item.order_id} {item.user_id} {item.product_id}
                                 </li>
                                 )}
                         </ul>
                     </CSSTransition>
 
-                    <CSSTransition in={stuffHistoryActive} classNames={'alert'} timeout={300} mountOnEnter unmountOnExit>
+                    <CSSTransition in={stuffHistoryActive} classNames={'alert'} timeout={400} mountOnEnter unmountOnExit>
                         <ul>
                             {stuffData.map(item => 
                                 <li 
-                                    key={item.data + item.id}
+                                    key={item.contact_id + item.topic}
                                     className='text'>
-                                    {item.id} {item.data}
+                                    номер вашей заявки {item.contact_id} <br /> 
+                                    тема вашей заявки {item.topic} <br />
+                                    ваш вопрос <br />
+                                    {item.question}
                                 </li>
                                 )}
                         </ul>
