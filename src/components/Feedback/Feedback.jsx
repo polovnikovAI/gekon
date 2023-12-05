@@ -7,19 +7,33 @@ import MyTextArea from '../UI/MyTextArea/MyTextArea';
 
 const Feedback = () => {
     const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
+    const [email, setEmail] = useState((localStorage.getItem('Mail') === null) ? 'зарегистрируйтесь' : localStorage.getItem('Mail'));
     const [topic, setTopic] = useState('');
     const [question, setQuestion] = useState('');
 
     const functionButton = (e) => {
-        e.preventDefault();
-        console.log(JSON.stringify(application));
-        setName('');
-        setEmail('');
-        setTopic('');
-        setQuestion('');
+        if (email === 'зарегистрируйтесь')
+        {
+            alert('проведите регистрацию на нашем сайте, чтобы отправить нам заявку')
+        }
+        else {
+            e.preventDefault();
+            fetch(`/api/user/feedback`,{ 
+                method: 'POST',
+
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+
+                body: JSON.stringify(application)})
+
+            setName('');
+            setTopic('');
+            setQuestion('');
+        }
     }
     
+
     let application = {
         name: name,
         email: email,
@@ -51,7 +65,8 @@ const Feedback = () => {
                             <span className={cl.feedbackQuestion}>
                             Ваш email :
                             </span>
-                            <MyInput 
+                            <MyInput
+                                disabled 
                                 value={email}
                                 placeholder='example@gekon.audio'
                                 style={{marginLeft: 20}} 

@@ -1,30 +1,38 @@
 import { useState, useEffect } from 'react';
-import MyButton from '../../components/UI/MyButton/MyButton';
+import MyButton from '../components/UI/MyButton/MyButton';
 import {Link} from 'react-router-dom';
-import { CSSTransition , TransitionGroup } from 'react-transition-group';
-import './Profile.css'
+import { CSSTransition } from 'react-transition-group';
+import '../styles/Profile.css'
 
 function Profile() {
 
     
     const [orderHistoryActive , setOrderHistoryActive] = useState(false);
     const [stuffHistoryActive, setStuffHistoryActive] = useState(false);
-    // const historyClasses = ['history']
+
+    fetch(`api//history/${localStorage.getItem('ID')}`)
+    .then(response => console.log(response.json()))
+    .then(response => console.log(response))
+
 
     // без этого при нажатии на кнопку он не выводит данные
     const testText = [{id: 1 , data: 'бочка'},{id: 2 , data: 'бас'},{id: 3 , data: 'пилил'},{id: 4 , data: 'крутил'},]
     const testText1 = [{id: 1 , data: 'пластинка'},{id: 3 , data: 'пиво'},{id: 4 , data: 'гриб'},]
     
-    const [historyData,setHistoryData] = useState(null)
-    const [stuffData , setStuffData] = useState(null)
+    const [historyData,setHistoryData] = useState([' '])
+    const [stuffData , setStuffData] = useState([' '])
 
 
     useEffect(()=> {
-        if (historyData === null){
-            setHistoryData(testText);
+        if (historyData[0] === ' '){
+            setHistoryData(testText)
+        }
+        if (stuffData[0] ===' '){
             setStuffData(testText1)
         }
-    }, )
+
+    }, [testText, testText1])
+
 
 
 
@@ -83,29 +91,35 @@ function Profile() {
                     </div>
                 </div> 
                 
-                <CSSTransition in={orderHistoryActive} classNames={'alert'} timeout={300} mountOnEnter unmountOnExit>
-                    <ul className='history'>
-                        {testText.map(item => 
-                            <li 
-                                key={item.id}
-                                className='text'>
-                                {item.id} {item.data}
-                            </li>
-                            )}
-                    </ul>
-                </CSSTransition>
+                <div className='history'>
+                    
+                    <CSSTransition in={orderHistoryActive} classNames={'alert'} timeout={300} mountOnEnter unmountOnExit>
+                        <ul >
+                            {historyData.map(item => 
+                                <li 
+                                    key={item.data + item.id}
+                                    className='text'>
+                                    {item.id} {item.data}
+                                </li>
+                                )}
+                        </ul>
+                    </CSSTransition>
 
-                <CSSTransition in={stuffHistoryActive} classNames={'alert'} timeout={300} mountOnEnter unmountOnExit>
-                    <ul className='history'>
-                        {testText1.map(item => 
-                            <li 
-                                key={item.id}
-                                className='text'>
-                                {item.id} {item.data}
-                            </li>
-                            )}
-                    </ul>
-                </CSSTransition>
+                    <CSSTransition in={stuffHistoryActive} classNames={'alert'} timeout={300} mountOnEnter unmountOnExit>
+                        <ul>
+                            {stuffData.map(item => 
+                                <li 
+                                    key={item.data + item.id}
+                                    className='text'>
+                                    {item.id} {item.data}
+                                </li>
+                                )}
+                        </ul>
+                    </CSSTransition>
+
+                </div>
+
+                
 
             </div>
         </div>

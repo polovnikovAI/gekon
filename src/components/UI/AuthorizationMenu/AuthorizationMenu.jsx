@@ -104,7 +104,8 @@ const AuthorizationMenu = () => {
                                     setAlertVisible(false);
                                     setId(response[0].user_id);
                                     setProfileLink('/profile');                                        
-                                    localStorage.setItem('ID' , id);
+                                    localStorage.setItem('ID' , response[0].user_id);
+                                    localStorage.setItem('Mail' , mail);
                                     // чтобы пропала модалка
                                     window.location.reload(false);
                                 }
