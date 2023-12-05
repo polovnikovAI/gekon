@@ -47,7 +47,7 @@ const Services = () => {
         <div className={cl.services}>
             <div className={cl.container}>
                 <div className={cl.cleanVinyl}>
-                    <div className={cl.cleanVinylText} id="moduleSevices">Мойка винила</div>
+                    <div className={cl.cleanVinylText} id="moduleServices">Мойка винила</div>
                     <div className={cl.cleanVinylCard}>
                         <div className={cl.cleanVinylTextCard}>
                             <p className={cl.cleanVinylTextCardPart}>Даже при самом аккуратном обращении с изделием на нем будет оседать пыль. Со временем она начнет забиваться в звуковые канавки. Это приведет к потере качества звука и помехам при воспроизведении мелодий.</p>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import MyButton from '../../components/UI/MyButton/MyButton';
-import {Link} from 'react-router-dom';
-import { CSSTransition , TransitionGroup } from 'react-transition-group';
+import { Link } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 import './Profile.css'
 
 function Profile() {
