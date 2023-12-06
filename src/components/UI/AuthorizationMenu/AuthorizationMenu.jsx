@@ -89,6 +89,7 @@ const AuthorizationMenu = () => {
                     <MyButton 
                     onClick = {(event) => {
                         event.preventDefault();
+                        setPasswdVisible(false);
                         setProfileLink('');
                         if (registrationVisible === true){
                             setRegistrationVisible(false);
@@ -131,8 +132,9 @@ const AuthorizationMenu = () => {
                     <MyButton 
                     onClick = { (event) => {
                         event.preventDefault();
+                        setAlertVisible(false)
                         if (registrationVisible === false)
-                        {
+                        {   
                             setRegistrationVisible(true);
                             registrationClasses.push('active')
                         }
@@ -168,6 +170,7 @@ const AuthorizationMenu = () => {
 
                                 
                             }
+
                         }
 
                     }}>

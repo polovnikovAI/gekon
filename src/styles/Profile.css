@@ -188,3 +188,58 @@ h1 {
     }
 
 }
+
+@media screen and (max-width: 500px) {
+
+        
+    .lineImage {
+        min-width: 100px;
+
+    }
+
+
+    .line {
+        min-width: 100px;
+    }
+
+    .content {
+        left: 110px;
+        max-width:calc(90% - 80px );
+    }
+
+    h1 {
+        margin: 0 0 10px 0;
+        font-size: 25px;
+    }
+    .button {
+        width: 50px;
+        font-size: 12px;
+    }
+
+    .botButton {
+        position: fixed;
+        left: 8px;
+        bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    
+    }
+    
+    .topButton {
+        position: fixed;
+        left: 8px;
+        top: 100px;
+        display: flex;
+        flex-direction: column;
+    
+    }
+    
+    .greetings{
+        font-size: 18px;
+        padding:10px;
+    }
+
+    .text{
+        font-size: 14px;
+    }
+}
