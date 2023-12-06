@@ -66,3 +66,36 @@
     object-fit: cover;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
 }
+
+@media screen and (max-width: 1200px) {
+    .cleanVinylText {
+        font-size: 45px;
+        margin-bottom: 30px;
+    }
+    .restorationRepairText {
+        font-size: 36px;
+        text-align: justify;
+        margin-top: 30px;
+        margin-bottom: 0px;
+    }
+    .cleanVinyl {
+        width: 100%;
+    }
+    .cleanVinylCard {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .cleanVinylTextCard {
+        padding: 15px;
+        margin: 0 2% 0 2%;
+    }
+    .cleanVinylTextCardPart {
+        text-align: justify;
+        font-size: 20px;
+        text-indent: 25px;
+    }
+    .cleanVinylPhoto {
+        margin-left: 10%;
+        height: 45vh;
+    }
+}
