@@ -7,6 +7,7 @@ import './Carousel.css';
 import MyButton from '../UI/MyButton/MyButton';
 import { Link } from 'react-router-dom';
 
+
 const Carousel = () => {
     const settings = {
         dots: true,
@@ -47,16 +48,22 @@ const Carousel = () => {
     return (
         <div className={cl.carousel}>
             <div className={cl.sliderTitle} id="moduleSpeakers">Собственное производство</div>
-            <div className={cl.unusualPhoto}>
-                <img src={require('../../photos/production/BKL_0873.jpg')} alt='Upload error' className={cl.unusualPhoto} />
-                <img src={require('../../photos/production/BKL_0861.jpg')} alt='Upload error' className={cl.unusualPhoto} />
+            <div className={cl.beforeCarousel}>
+                <img src={require('./photosCarousel/BKL_0873.jpg')} alt='Upload error' className={cl.photoBeforeCarousel} />
+                <img src={require('./photosCarousel/BKL_0861.jpg')} alt='Upload error' className={cl.photoBeforeCarousel} />
+                
             </div>
-            <Slider {...settings}>
-                <img src={require('../../photos/production/BKL_9167.jpg')} alt='Upload error' className={cl.photo} />
-                <img src={require('../../photos/production/BKL_9126.jpg')} alt='Upload error' className={cl.photo} />
-                <img src={require('../../photos/restorationDiatone2017/BKL_4930.jpg')} alt='Upload error' className={cl.photo} />
-                <img src={require('../../photos/TLM12015/TLM1/1600/BKL_9612.jpg')} alt='Upload error' className={cl.photo} />
-            </Slider>
+            <div className={cl.beforeCarouselRender}>
+            <img src={require('./photosCarousel/IvDBO5gYMpk.jpg')} alt='Upload error' className={cl.photoRender} />
+            </div>
+            <div className={cl.sliderClass}>
+                <Slider {...settings}>
+                    <img src={require('./photosCarousel/BKL_9167.jpg')} alt='Upload error' className={cl.photoCarousel} />
+                    <img src={require('./photosCarousel/BKL_9126.jpg')} alt='Upload error' className={cl.photoCarousel} />
+                    <img src={require('./photosCarousel/BKL_4930.jpg')} alt='Upload error' className={cl.photoCarousel} />
+                    <img src={require('./photosCarousel/BKL_9638.jpg')} alt='Upload error' className={cl.photoCarousel} />
+                </Slider>
+            </div>
             <div className={cl.toGallery}>
                 <Link to="/gallery">
                     <MyButton>Перейти в галерею</MyButton>

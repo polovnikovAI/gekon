@@ -54,7 +54,7 @@ const Navbar = () => {
                 <LinkScroll to="moduleAbout" {...LinkScrollSettings} className={burgerClicked ? classNames(cl.navbarItem, cl.responsive) : cl.navbarItem}>
                     О нас
                 </LinkScroll>
-                <LinkScroll to="moduleSpeakers" {...LinkScrollSettings} className={burgerClicked ? classNames(cl.navbarItem, cl.responsive) : cl.navbarItem}>
+                <LinkScroll to="moduleSpeakers" {...LinkScrollSettings} offset={-95} className={burgerClicked ? classNames(cl.navbarItem, cl.responsive) : cl.navbarItem}>
                     Колонки
                 </LinkScroll>
                 <LinkScroll to="moduleServices" {...LinkScrollSettings} className={burgerClicked ? classNames(cl.navbarItem, cl.responsive) : cl.navbarItem}>
