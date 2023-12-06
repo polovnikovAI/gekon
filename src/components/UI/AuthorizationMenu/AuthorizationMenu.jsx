@@ -124,7 +124,7 @@ const AuthorizationMenu = () => {
 
                     }}>
 
-                        <Link to  = {profileLink} style={{color: 'black'}}> Авторизироваться </Link>
+                        <div className={classes.buttonText}><Link to  = {profileLink} style={{color: 'black'}}> Авторизироваться </Link></div>
 
                     </MyButton>
                     
@@ -171,7 +171,7 @@ const AuthorizationMenu = () => {
                         }
 
                     }}>
-                        Зарегистрироваться
+                        <div className={classes.buttonText}>Зарегистрироваться</div>
                     </MyButton>
 
                 </div>

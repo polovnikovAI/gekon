@@ -7,8 +7,7 @@
 }
 
 .Profile{
-    background-color: rgba(66, 133, 103, 0.1);
-    height: 100vh;
+    height: 100%;
 }
 
 
@@ -21,6 +20,7 @@
     background-size: cover;
     background-position: right;
     height: 100%;
+
 }
 
 
@@ -46,6 +46,7 @@
     max-width: var(--content-width) ;
     font-size: 20px;
     color: #fff;
+    
 }
 
 
@@ -89,16 +90,19 @@ h1 {
     height: var(--history-height);
     margin-top: 40px;
     display: flex;
-
+    overflow: auto;
 }
 
+.history::-webkit-scrollbar {
+    width: 10px;
+}
 
 
 
 .text {
     padding-left: 20px;
+    padding-top: 5px;
     display: flex;
-    align-items: center;
     color: black;
     height: 100px;
     border: 2px solid rgba(0, 0, 0, 0.4);
@@ -106,7 +110,10 @@ h1 {
     border-radius: 10px;
     margin-top: 12px;
     z-index: 10;
+    overflow: auto;
 }
+
+
 
 
 .botButton {
@@ -149,4 +156,35 @@ h1 {
     transform: translateY(200px);
     transition: all 400ms ease;
     opacity: 0;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+
+    
+    .lineImage {
+        min-width: 180px;
+
+    }
+
+
+    .line {
+        min-width: 180px;
+    }
+
+    .content {
+        left: 200px;
+        max-width:calc(90% - 160px );
+    }
+
+    h1 {
+        margin:0 0 20px 0 ;
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+    .button {
+        width: 115px;
+    }
+
 }

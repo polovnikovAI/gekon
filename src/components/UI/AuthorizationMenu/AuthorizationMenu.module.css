@@ -37,12 +37,25 @@
 }
 
 
+@media screen and (max-width: 1200px) {
 
+    .greetings {
+        background-color: rgba(66, 133, 103, 0.8);
+        width: 400px;
+        height: 100px;
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+    
+    .button {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    
+    .buttonText {
+        font-size: 16px;
+    }
 
-/* .visible.active {
-    display: flex;
 }
 
-.visible {
-    display: none;
-} */

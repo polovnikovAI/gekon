@@ -3,6 +3,7 @@ import MyButton from '../components/UI/MyButton/MyButton';
 import {Link} from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import '../styles/Profile.css'
+import { Button } from 'react-scroll';
 
 function Profile() {
 
@@ -50,10 +51,11 @@ function Profile() {
                                 setOrderHistoryActive(!orderHistoryActive);
 
                         }}>
-                            История заказов
+                            <div className = 'button'>История заказов</div>
                         </MyButton>
 
                         <MyButton
+
                             style={{marginTop: '12px'}}
                             onClick = {(event) => {
                                 event.preventDefault();
@@ -61,18 +63,19 @@ function Profile() {
                                 setStuffHistoryActive(!stuffHistoryActive);
 
                         }}>
-                            История обращений
+                            <div className = 'button'>История обращений</div> 
                         </MyButton>
                     </div>
 
                     <div className='botButton'>
-                        <MyButton 
+                        <MyButton
+                            className = 'button'
                             onClick={ () =>{ 
                                 localStorage.clear();
                                 // чтобы кнопка менялась получилось только с location.reload
                                 window.location.reload(false);
                             }}>
-                            <Link to  = '/' style={{color: 'black'}}>выйти из аккаунта</Link>
+                            <div className = 'button'><Link to  = '/' style={{color: 'black'}}>выйти из аккаунта</Link></div>
                         </MyButton>
                     </div>
             </div>
