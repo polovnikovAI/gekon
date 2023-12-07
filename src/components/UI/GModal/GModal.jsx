@@ -1,6 +1,5 @@
 import React from "react";
 import classes from './GModal.module.css'
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 const GModal = ({children, visible, setVisible}) => {
     

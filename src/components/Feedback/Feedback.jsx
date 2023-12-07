@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import cl from './Feedback.module.css';
-import leftPhotoFeedback from '../../photos/JBL4325/DSC_9964.JPG';
 import MyInput from '../UI/MyInput/MyInput';
 import MyButton from '../UI/MyButton/MyButton';
 import MyTextArea from '../UI/MyTextArea/MyTextArea';
@@ -44,64 +43,60 @@ const Feedback = () => {
     return (
         <div className={cl.feedbackWrapper} id="moduleContacts">
             <div className={cl.container}>
-                <img src={leftPhotoFeedback} alt="" className={cl.backPhotoFeedback} />
-                <div className={cl.feedbackForm}>
-                    <div className={cl.feedbackTitle}>
-                        Напишите нам
-                    </div>
-                    <form action=''>
+                <div className={cl.feedbackTitle}>
+                    Связь с нами
+                </div>
+                <div className={cl.backgroundFeedbackForm}>
+                    <form action='' className={cl.feedbackForm}>
                         <div className={cl.feedbackUnit}>
-                            <span className={cl.feedbackQuestion}>
+                            <div className={cl.feedbackQuestion}>
                                 Как к Вам обращаться?
-                            </span>
+                            </div>
                             <MyInput 
-                                value={name} 
+                                value={name}
                                 placeholder='Алексей'
-                                style={{marginLeft: 20}}
                                 onChange={event => setName(event.target.value)}
                             />
                         </div>
                         <div className={cl.feedbackUnit}>
-                            <span className={cl.feedbackQuestion}>
+                            <div className={cl.feedbackQuestion}>
                             Ваш email :
-                            </span>
+                            </div>
                             <MyInput
-                                disabled 
+                                disabled
                                 value={email}
                                 placeholder='example@gekon.audio'
-                                style={{marginLeft: 20}} 
                                 onChange={event => setEmail(event.target.value)}
                             />
                         </div>
                         <div className={cl.feedbackUnit}>
-                            <span className={cl.feedbackQuestion}>
+                            <div className={cl.feedbackQuestion}>
                                 Тема обращения :
-                            </span>
+                            </div>
                             <MyInput 
                                 value={topic} 
                                 placeholder='Заказать колонки'
-                                style={{marginLeft: 20}}
                                 onChange={event => setTopic(event.target.value)}
                             />
                         </div>
                         <div className={cl.feedbackUnit}>
-                            <span className={cl.feedbackQuestion}>
+                            <div className={cl.feedbackQuestion}>
                                 Ваш вопрос :
-                            </span>
+                            </div>
                             <MyTextArea 
                                 value={question}
                                 placeholder='Можем обсудить детали заказа ?'
-                                style={{marginLeft: 20}}
                                 onChange={event => setQuestion(event.target.value)}
                             />
                         </div>
                         <div className={cl.feedbackFooter}>
-                            <MyButton
-                            style={{width: 420}}
-                            type="submit" 
-                            onClick={functionButton}
+                        <MyButton
+                                // style={{}}
+                                type="submit" 
+                                onClick={functionButton}
                             >
-                                Отправить</MyButton>
+                                Отправить
+                            </MyButton>
                         </div>
                     </form>
                 </div>

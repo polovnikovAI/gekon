@@ -55,3 +55,62 @@
 .navbarItem:hover::before {
     width: 100%;
 }
+
+.burgerIcon {
+    display: none;
+    width: 50px;
+    height: 40px;
+    margin: -5px 0px 0px 10px;
+    cursor: pointer;
+}
+.burgerIcon:hover {
+    scale: 0.97;
+    opacity: 0.6;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .logo {
+        scale: .7;
+        margin-left: -100px;
+    }
+    .burgerIcon {
+        display: block;
+        position: relative;
+        float: right;
+        top: 55px;
+        right: 0px;
+    }
+    .navbarItem {
+        display: flex;
+        flex-direction: column;
+        width: 150%;
+        text-align: center;
+        left: -120px;
+        transform: translateY(-200px);
+    }
+    .navigation {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .burgerClickedActive {
+        position: absolute;
+        top: 24px;
+        right: 92px;
+    }
+    
+    .navbarItem.responsive {
+        margin: 1px 0px 0px -25px;
+        padding: 10px;
+        top: 100px;
+        width: 250%;
+        display: flex;
+        justify-content: center;
+        transform: translateY(45px);;
+        transition: all .5s;
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+}
