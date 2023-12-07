@@ -89,6 +89,7 @@ const AuthorizationMenu = () => {
                     <MyButton 
                     onClick = {(event) => {
                         event.preventDefault();
+                        setPasswdVisible(false);
                         setProfileLink('');
                         if (registrationVisible === true){
                             setRegistrationVisible(false);
@@ -104,7 +105,8 @@ const AuthorizationMenu = () => {
                                     setAlertVisible(false);
                                     setId(response[0].user_id);
                                     setProfileLink('/profile');                                        
-                                    localStorage.setItem('ID' , id);
+                                    localStorage.setItem('ID' , response[0].user_id);
+                                    localStorage.setItem('Mail' , mail);
                                     // чтобы пропала модалка
                                     window.location.reload(false);
                                 }
@@ -123,15 +125,16 @@ const AuthorizationMenu = () => {
 
                     }}>
 
-                        <Link to  = {profileLink} style={{color: 'black'}}> Авторизироваться </Link>
+                        <div className={classes.buttonText}><Link to  = {profileLink} style={{color: 'black'}}> Авторизироваться </Link></div>
 
                     </MyButton>
                     
                     <MyButton 
                     onClick = { (event) => {
                         event.preventDefault();
+                        setAlertVisible(false)
                         if (registrationVisible === false)
-                        {
+                        {   
                             setRegistrationVisible(true);
                             registrationClasses.push('active')
                         }
@@ -167,10 +170,11 @@ const AuthorizationMenu = () => {
 
                                 
                             }
+
                         }
 
                     }}>
-                        Зарегистрироваться
+                        <div className={classes.buttonText}>Зарегистрироваться</div>
                     </MyButton>
 
                 </div>
