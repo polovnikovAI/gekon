@@ -38,7 +38,6 @@ const Navbar = () => {
     // для адаптивного меню
     const [burgerClicked, setBurgerClicked] = useState(false);
     
-
     return (
         <div className={cl.navigation}>
             <Link to="/home">

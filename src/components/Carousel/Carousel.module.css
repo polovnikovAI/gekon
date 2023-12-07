@@ -86,6 +86,7 @@
     .toGallery {
         display: flex;
         justify-content: center;
+        margin: 35px 0 0 0;
     }
     
 
