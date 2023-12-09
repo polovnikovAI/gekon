@@ -82,7 +82,7 @@
 @media screen and (max-width: 1200px) {
     .personalAreaAuth {
         padding: 15px;
-        margin-left: 45%;
+        background-position-x: center;
     }
     .logo {
         scale: .7;
@@ -90,10 +90,8 @@
     }
     .burgerIcon {
         display: block;
-        position: relative;
-        float: right;
-        top: 55px;
-        right: 0px;
+        position: absolute;
+        top: 30%;
     }
     .navbarItem {
         display: flex;
@@ -109,9 +107,9 @@
         width: 100%;
     }
     .burgerClickedActive {
+        display: block;
         position: absolute;
-        top: 24px;
-        right: 92px;
+        top: 30%;
     }
     .navbarItem.responsive {
         margin: 1px 0px 0px -25px;
