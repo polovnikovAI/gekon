@@ -36,7 +36,6 @@ function Profile() {
 
 
 
-
     return (
         <div className='Profile'>
 
@@ -98,9 +97,13 @@ function Profile() {
                         <ul >
                             {historyData.map(item => 
                                 <li 
-                                    key={item.order_id + item.user_id}
+                                    
+                                    key={item.order_id + item.user_id + item.product_name}
                                     className='text'>
-                                    {item.order_id} {item.user_id} {item.product_id}
+                                    Номер вашей заявки: {item.order_id}<br /> 
+                                    номер товара: {item.product_id}<br /> 
+                                    дата заказа: {item.history_date}<br /> 
+                                    наименование товара: {item.product_name}<br /> 
                                 </li>
                                 )}
                         </ul>
@@ -112,9 +115,9 @@ function Profile() {
                                 <li 
                                     key={item.contact_id + item.topic}
                                     className='text'>
-                                    номер вашей заявки {item.contact_id} <br /> 
-                                    тема вашей заявки {item.topic} <br />
-                                    ваш вопрос <br />
+                                    номер вашей заявки: {item.contact_id} <br /> 
+                                    тема вашей заявки: {item.topic} <br />
+                                    ваш вопрос: <br />
                                     {item.question}
                                 </li>
                                 )}

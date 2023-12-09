@@ -20,8 +20,7 @@ class UserConstroller {
         
         try{
         const {name, email, topic , question} = request.body
-        const newApplication = await db.query (`select kursachbpz.technical_support_note($1,$2,$3,$4
-            )` , [name,email, topic , question])
+        const newApplication = await db.query (`select kursachbpz.technical_support_note($1,$2,$3,$4)` , [name,email, topic , question])
         response.json(newApplication.rows)
         }
 
@@ -34,8 +33,8 @@ class UserConstroller {
     async historyShow(request, response){
         try { 
         const {userId} = request.params
-        const historyData = await db.query('select * from kursachbpz.history where user_id = $1' , [userId])
-
+        const historyData = await db.query('select * from kursachbpz.order_history where user_id = $1' , [userId])
+        
         return response.json(historyData.rows);
         }
 
@@ -64,6 +63,19 @@ class UserConstroller {
         
         return response.json(userData.rows);
         
+        }
+
+        catch (e){
+            response.status(500).json(e)
+        }
+    }
+
+    async galleryLoad(request,response){
+        try{
+        
+        const galleryData = await db.query('select * from kursachbpz.products')
+        
+        return response.json(galleryData.rows);
         }
 
         catch (e){
