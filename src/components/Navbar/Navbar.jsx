@@ -84,7 +84,6 @@ const Navbar = () => {
                         className={isAuth ? cl.personalAreaAuth : cl.personalAreaNotAuth}
                     >{isAuth ? ' ' : 'Личный кабинет'}</Link>
                 </span>
-                
             </div>
         
                 <GModal 

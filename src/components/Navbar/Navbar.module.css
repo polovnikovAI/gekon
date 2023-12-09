@@ -80,6 +80,10 @@
 
 
 @media screen and (max-width: 1200px) {
+    .personalAreaAuth {
+        padding: 15px;
+        margin-left: 45%;
+    }
     .logo {
         scale: .7;
         margin-left: -100px;
@@ -104,13 +108,11 @@
         justify-content: center;
         width: 100%;
     }
-
     .burgerClickedActive {
         position: absolute;
         top: 24px;
         right: 92px;
     }
-    
     .navbarItem.responsive {
         margin: 1px 0px 0px -25px;
         padding: 10px;
@@ -123,4 +125,5 @@
         background-color: #ccc;
         border-radius: 5px;
     }
+
 }
