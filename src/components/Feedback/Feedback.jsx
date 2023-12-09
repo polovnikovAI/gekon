@@ -91,7 +91,6 @@ const Feedback = () => {
                         </div>
                         <div className={cl.feedbackFooter}>
                         <MyButton
-                                // style={{}}
                                 type="submit" 
                                 onClick={functionButton}
                             >

@@ -67,6 +67,16 @@
     scale: 0.97;
     opacity: 0.6;
 }
+.personalAreaAuth {
+    color: #000;
+    padding-left: 10px;
+    padding-right: 20px;
+    background-image: url('../../photos/logo/personal-area-icon.svg');
+    background-repeat: no-repeat;
+}
+.personalAreaNotAuth {
+    color: #000;
+}
 
 
 @media screen and (max-width: 1200px) {
