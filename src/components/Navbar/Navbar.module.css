@@ -67,19 +67,31 @@
     scale: 0.97;
     opacity: 0.6;
 }
+.personalAreaAuth {
+    color: #000;
+    padding-left: 10px;
+    padding-right: 20px;
+    background-image: url('../../photos/logo/personal-area-icon.svg');
+    background-repeat: no-repeat;
+}
+.personalAreaNotAuth {
+    color: #000;
+}
 
 
 @media screen and (max-width: 1200px) {
+    .personalAreaAuth {
+        padding: 15px;
+        background-position-x: center;
+    }
     .logo {
         scale: .7;
         margin-left: -100px;
     }
     .burgerIcon {
         display: block;
-        position: relative;
-        float: right;
-        top: 55px;
-        right: 0px;
+        position: absolute;
+        top: 30%;
     }
     .navbarItem {
         display: flex;
@@ -94,13 +106,11 @@
         justify-content: center;
         width: 100%;
     }
-
     .burgerClickedActive {
+        display: block;
         position: absolute;
-        top: 24px;
-        right: 92px;
+        top: 30%;
     }
-    
     .navbarItem.responsive {
         margin: 1px 0px 0px -25px;
         padding: 10px;
@@ -113,4 +123,5 @@
         background-color: #ccc;
         border-radius: 5px;
     }
+
 }

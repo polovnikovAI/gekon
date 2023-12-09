@@ -37,6 +37,8 @@ const Navbar = () => {
     
     // для адаптивного меню
     const [burgerClicked, setBurgerClicked] = useState(false);
+    const [isAuth, setIsAuth] = useState((localStorage.getItem('ID') === null) ? false : true);
+
     
     return (
         <div className={cl.navigation}>
@@ -72,13 +74,16 @@ const Navbar = () => {
                             setModal(true);
                         }
                         else{
-                            setLink(true);
+                            setLink(true)
+                            setIsAuth(true);
                         }
                     }}
                 >
-                    <Link to={profileLink} style={{color: '#000'}}>Личный кабинет</Link>
+                    <Link
+                        to={profileLink}
+                        className={isAuth ? cl.personalAreaAuth : cl.personalAreaNotAuth}
+                    >{isAuth ? ' ' : 'Личный кабинет'}</Link>
                 </span>
-                
             </div>
         
                 <GModal 
