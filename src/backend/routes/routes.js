@@ -15,4 +15,6 @@ router.get('/stuff/:mail' , userController.stuffShow)
 
 router.get('/user/:mail/:passwd' , userController.userCheck)
 
+router.get('/gallery', userController.galleryLoad)
+
 module.exports = router;

@@ -3,32 +3,42 @@ import cl from './Feedback.module.css';
 import MyInput from '../UI/MyInput/MyInput';
 import MyButton from '../UI/MyButton/MyButton';
 import MyTextArea from '../UI/MyTextArea/MyTextArea';
+import GModal from '../UI/GModal/GModal';
+import FeedbackAlert from '../UI/FeedbackAlert/FeedbackAlert';
+import { spaceCkecker } from '../SpaceChecker';
 
 const Feedback = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState((localStorage.getItem('Mail') === null) ? 'зарегистрируйтесь' : localStorage.getItem('Mail'));
     const [topic, setTopic] = useState('');
     const [question, setQuestion] = useState('');
+    const [modal, setModal] = useState('')
+    const [emptyQuestionModal , setEmptyQuestionModal ] = useState('')
 
     const functionButton = (e) => {
+        e.preventDefault();
         if (email === 'зарегистрируйтесь')
         {
-            alert('проведите регистрацию на нашем сайте, чтобы отправить нам заявку')
+            setModal(true)
         }
         else {
-            e.preventDefault();
-            fetch(`/api/user/feedback`,{ 
-                method: 'POST',
+            if (question.replaceAll(' ', '') !== '') {
+                fetch(`/api/user/feedback`,{ 
+                    method: 'POST',
 
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8'
-                },
+                    headers: {
+                        'Content-Type': 'application/json;charset=utf-8'
+                    },
 
-                body: JSON.stringify(application)})
+                    body: JSON.stringify(application)})
 
-            setName('');
-            setTopic('');
-            setQuestion('');
+                setName('');
+                setTopic('');
+                setQuestion('');
+            }
+            else {
+                setEmptyQuestionModal(true)
+            }
         }
     }
     
@@ -101,6 +111,19 @@ const Feedback = () => {
                     </form>
                 </div>
             </div>
+
+            <GModal
+                visible = {modal}
+                setVisible = {setModal}>
+                <FeedbackAlert/>
+            </GModal>
+
+            <GModal
+                visible = {emptyQuestionModal}
+                setVisible = {setEmptyQuestionModal}>
+                <div style={{fontSize:'25px' , marginTop: '30%'}}>поле "Ваш вопрос" - не может быть пустым</div>
+            </GModal>
+
         </div>
     );
 };
