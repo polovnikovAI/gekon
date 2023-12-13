@@ -24,7 +24,7 @@
 ---
 
 для запуска frontend:
--в директории проекта прописать npm start
+- в директории проекта прописать npm start
 
 для запуска backend:
 - cd src/backend
