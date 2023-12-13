@@ -22,15 +22,18 @@
 - реализовать возможность связаться и обсудить заказ акустики
 
 ---
+
 для запуска frontend:
-в директории проекта прописать npm start
+-в директории проекта прописать npm start
+
 для запуска backend:
-cd src/backend
-npm start
+- cd src/backend
+- npm start
 
 чтобы запустить backend в режиме разработки:
-cd src/backend
-npm run dev
+- cd src/backend
+- npm run dev
+
 ---
 - ♡ beresnevEO ;
 - ♡ zazulyaAA ;
