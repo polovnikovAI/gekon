@@ -2,11 +2,10 @@ import React from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import cl from './Carousel.module.css';
-import './Carousel.css';
+import cl from './Carousel.module.sass';
+import './Carousel.sass';
 import MyButton from '../UI/MyButton/MyButton';
 import { Link } from 'react-router-dom';
-
 
 const Carousel = () => {
     const settings = {
@@ -54,7 +53,7 @@ const Carousel = () => {
                 
             </div>
             <div className={cl.beforeCarouselRender}>
-            <img src={require('./photosCarousel/IvDBO5gYMpk.jpg')} alt='Upload error' className={cl.photoRender} />
+                <img src={require('./photosCarousel/IvDBO5gYMpk.jpg')} alt='Upload error' className={cl.photoRender} />
             </div>
             <div className={cl.sliderClass}>
                 <Slider {...settings}>

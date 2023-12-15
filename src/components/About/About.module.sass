@@ -1,0 +1,60 @@
+.about
+    margin-top: 150px
+    .container 
+        width: 100%
+        .aboutHeader 
+            display: flex
+            justify-content: center
+            font-size: 48px
+            text-transform: uppercase
+            margin-bottom: 30px
+            word-spacing: 20px
+            letter-spacing: 5px
+            color: #428567
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8)
+        .aboutText 
+            display: flex
+            flex-direction: column
+            color: #fff
+            padding: 100px
+            background: url('../../photos/wires2017/BKL_7337.JPG')
+            background-size: cover
+            background-attachment: fixed
+            .textCard
+                border: 2px solid #428567
+                width: 400px
+                height: 200px
+                border-radius: 20px
+                font-size: 20px
+                text-align: justify
+                padding: 8px 16px
+                margin-bottom: 20px
+                box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px
+                text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8)
+            .card1 
+                align-self: flex-start
+            .card2 
+                align-self: center
+            .card3 
+                align-self: flex-end
+@media screen and (max-width: 1200px)
+    .about 
+        margin-top: 100px
+        .container
+            width: 100%
+            .aboutHeader
+                font-size: 36px
+            .aboutText 
+                background-image: url('../../photos/wires2017/BKL_7337.JPG')
+                width: 100%
+                background-size: initial
+                background-position-x: 50%
+                background-position-y: 40%
+                padding: 20px
+                .textCard
+                    padding: 12px
+                    font-size: 16px
+                    width: 400px
+                    height: 160px
+                .card1, .card2, .card3 
+                    align-self: normal

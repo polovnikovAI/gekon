@@ -1,0 +1,70 @@
+.carousel
+    width: 100%
+    margin: 0 auto
+
+    .sliderTitle 
+        display: flex
+        font-size: 50px
+        text-transform: uppercase
+        font-weight: 600
+        background: linear-gradient(45deg, #02cf84 55%,  #428567)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        margin-top: 50px
+        justify-content: center
+        margin-bottom: 40px
+    .beforeCarousel 
+        display: flex
+        margin: 0px auto
+        width: 90%
+        justify-content: center
+        flex-wrap: wrap
+        .photoBeforeCarousel 
+            border-radius: 8px
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4)
+            width: 33%
+            height: 45vw
+        .photoBeforeCarousel:nth-last-child(-n+1) 
+            margin: 0 0 0 5%
+    .beforeCarouselRender
+        display: flex
+        justify-content: center
+        margin: 30px 0px 20px 0px
+        .photoRender 
+            width: 50%
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4)
+            border-radius: 8px
+    .sliderClass 
+        width: 98%
+        margin-left: 1%
+        .photoCarousel 
+            border-radius: 24px
+            object-fit: cover
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8)
+    .toGallery 
+        display: flex
+        justify-content: flex-end
+        margin: 25px 25px 0px 0px
+
+@media screen and (max-width: 1200px)
+    .sliderTitle
+        font-size: 35px
+        margin: 25px 0px 25px 15%
+        text-indent: 15px
+    .beforeCarousel
+        display: flex
+        width: 100%
+        .photoBeforeCarousel
+            width: 80%
+            height: 60vh
+            border: none
+            margin-bottom: 10px
+    .photoBeforeCarousel:nth-last-child(-n+1)
+        margin: 0
+        margin-bottom: -20px
+    .photoRender
+        width: 100%
+    .toGallery
+        display: flex
+        justify-content: center
+        margin: 35px 0 0 0

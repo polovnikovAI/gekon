@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import cl from './Services.module.css';
-import '../Carousel/Carousel.css';
+import '../Carousel/Carousel.sass';
 
 
 const Services = () => {

@@ -1,4 +1,3 @@
-import '../styles/Home.css';
 import About from '../components/About/About';
 import Carousel from '../components/Carousel/Carousel';
 import Footer from '../components/Footer/Footer';
