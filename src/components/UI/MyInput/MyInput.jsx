@@ -1,5 +1,5 @@
 import React from 'react';
-import cl from './MyInput.module.css'
+import cl from './MyInput.module.sass'
 
 const MyInput = (children) => {
     return (

@@ -1,0 +1,91 @@
+.navigation
+    position: fixed
+    z-index: 99
+    top: 0
+    left: 0
+    width: 100%
+    padding: 20px 100px
+    background: #fff
+    box-shadow: 1px 2px 4px #0000006e
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 80px
+    .logo
+        height: 70px
+    .navbar
+        .burgerIcon
+            display: none
+            width: 50px
+            height: 40px
+            margin: -5px 0px 0px 10px
+            cursor: pointer
+            &:hover
+                scale: 0.97
+                opacity: 0.6
+        .navbarItem
+            display: inline
+            position: relative
+            font-size: 22px
+            color: #000
+            font-weight: 500
+            text-decoration: none
+            margin-left: 40px
+            cursor: pointer
+            &::before
+                content: ''
+                position: absolute
+                top: 100%
+                left: 0
+                width: 0
+                height: 2px
+                background: #428567
+                transition: 0.4s
+            &:hover::before
+                width: 100%
+            .personalAreaAuth
+                color: #000
+                padding-left: 10px
+                padding-right: 20px
+                background-image: url('../../photos/logo/personal-area-icon.svg')
+                background-repeat: no-repeat
+            .personalAreaNotAuth
+                color: #000
+@media screen and (max-width: 1200px)
+    .navigation
+        display: flex
+        justify-content: center
+        width: 100%
+        .logo
+            scale: .7
+            margin-left: -100px
+        .navbar
+            .burgerIcon
+                display: block
+                position: absolute
+                top: 30%
+            .burgerClickedActive
+                display: block
+                position: absolute
+                top: 30%
+            .navbarItem
+                display: flex
+                flex-direction: column
+                width: 150%
+                text-align: center
+                left: -120px
+                transform: translateY(-200px)
+            .navbarItem.responsive
+                margin: 1px 0px 0px -25px
+                padding: 10px
+                top: 100px
+                width: 250%
+                display: flex
+                justify-content: center
+                transform: translateY(45px)
+                transition: all .5s
+                background-color: #ccc
+                border-radius: 5px
+            .personalAreaAuth 
+                padding: 15px
+                background-position-x: center

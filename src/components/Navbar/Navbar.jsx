@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../../photos/logo/gekon_logo_old.png';
-import cl from './Navbar.module.css';
+import cl from './Navbar.module.sass';
 import GModal from '../UI/GModal/GModal';
 import { Link } from 'react-router-dom';
 import  { Link as LinkScroll } from 'react-scroll';

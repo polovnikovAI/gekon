@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import GInput from "../GInput/GInput";
 import MyButton from "../MyButton/MyButton";
-import classes from "./AuthorizationMenu.module.css";
-import './AuthorizationMenu.css'
+import classes from "./AuthorizationMenu.module.sass";
+import './AuthorizationMenu.sass';
 import { Link } from "react-router-dom";
 import { spaceCkecker } from "../../SpaceChecker";
 import { mailCkecker } from "../../mailChecker";
@@ -142,8 +142,6 @@ const AuthorizationMenu = () => {
     const RegistrationFunction = (event) => {
             event.preventDefault();
             
-
-
             if (!spaceAlert) {
                 if (registrationVisible === false)
                     {   
@@ -190,7 +188,7 @@ const AuthorizationMenu = () => {
                                 
                         }
                         
-     
+    
                     }
                     
                     else 
@@ -202,7 +200,7 @@ const AuthorizationMenu = () => {
     }
 
     return (
-        <div>
+        <div className={classes.authorizationMenu}>
 
             <div className={classes.content}> 
                 <div className={classes.greetings}>
@@ -212,19 +210,19 @@ const AuthorizationMenu = () => {
                 <div className={classes.input}>
 
                     <div className = {successRegistrationClasses} style={{fontSize: '24px' , color: 'green' }}>
-                        регистрация прошла успешно, авторизируйтесь
+                        Регистрация прошла успешно, авторизируйтесь
                     </div>
 
                     <div className = {mailExistsCheckClasses} style={{fontSize: '24px' , color: 'green' }}>
-                        укажите правильную почту
+                        Укажите правильную почту
                     </div>
 
                     <div className = {spaceAlertClasses} style={{fontSize: '24px' , color: 'red' }}>
-                        пароль или почта не должны содеражать пробелов
+                        Пароль или почта не должны содеражать пробелов
                     </div>
 
                     <div className = {mailCkeckClasses} style={{fontSize: '24px' , color: 'red' }}>
-                        пользователь с такой почтой уже существует
+                        Пользователь с такой почтой уже существует
                     </div>
 
                     <div className = {alertClasses} style={{fontSize: '24px' , color: 'red' }}>

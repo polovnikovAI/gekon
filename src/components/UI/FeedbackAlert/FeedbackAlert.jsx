@@ -1,5 +1,4 @@
-import { useState } from "react";
-import classes from "./FeedbackAlert.module.css";
+import classes from "./FeedbackAlert.module.sass";
 
 
 const FeedbackAlert = () => {

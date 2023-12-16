@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./GInput.module.css";
+import classes from "./GInput.module.sass";
 
 const GInput = React.forwardRef((props, ref) => {
     return (
