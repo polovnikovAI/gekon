@@ -2,29 +2,18 @@ import React from 'react';
 import classes from './productCard.module.sass';
 
 
-const ProductCard = ({data, title, img}) => {
-
-
-    
+const ProductCard = ({ data, title, img }) => {
     return (
         <div className={classes.productCard}>
-            
-            <img className={classes.productImg} width="300" height="500" 
-                src={img}>      
+            <img className={classes.productImg} width="300" height="500"
+                src={img}>
             </img>
-
             <div className={classes.productTitle}>
                 {title}
             </div>
-
-
             <div className={classes.productData}>
                 {data}
             </div>
-
-            
-
-
         </div>
     );
 };

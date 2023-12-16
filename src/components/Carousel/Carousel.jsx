@@ -20,29 +20,29 @@ const Carousel = () => {
             {
                 breakpoint: 1024,
                 settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: true
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
                 }
             },
             {
                 breakpoint: 600,
                 settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                initialSlide: 2
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
+                    slidesToShow: 1,
+                    slidesToScroll: 1
                 }
             }
-            ]
-        };
+        ]
+    };
 
     return (
         <div className={cl.carousel}>
@@ -50,7 +50,7 @@ const Carousel = () => {
             <div className={cl.beforeCarousel}>
                 <img src={require('./photosCarousel/BKL_0873.jpg')} alt='Upload error' className={cl.photoBeforeCarousel} />
                 <img src={require('./photosCarousel/BKL_0861.jpg')} alt='Upload error' className={cl.photoBeforeCarousel} />
-                
+
             </div>
             <div className={cl.beforeCarouselRender}>
                 <img src={require('./photosCarousel/IvDBO5gYMpk.jpg')} alt='Upload error' className={cl.photoRender} />
