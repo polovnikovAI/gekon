@@ -16,30 +16,40 @@
 ![MDN Web Docs](https://img.shields.io/badge/MDN_Web_Docs-black?style=for-the-badge&logo=mdnwebdocs&logoColor=white)
 ![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white)
 <br>
-### Основным цветом стал зелёный из-за логотипа компании, который был нарисован в 2015 году.
 
-В данном проекте мы хотели :
-- познакомить клиента с компанией и предоставляемыми услугами
-- реализовать возможность связаться и обсудить заказ акустики
+### При разработке сайта Gekon **важно** сохранять:
+
+1. Основную цветовую палитру, которая указана в index.sass
+2. Минималистичный дизайн и качество используемых фотографий
+3. Простоту и удобство интерфейса
+
+### В данном проекте мы хотели :
+
+-   познакомить клиента с компанией и предоставляемыми услугами
+-   реализовать возможность связаться и обсудить заказ акустики
+-   разработать понятный и удобный интерфейс сайта
+-   оставить возможность продолжения разработки и масштабирования
 
 ---
 
 для запуска frontend:
-- в директории проекта прописать npm start
+
+-   в директории проекта прописать npm start
 
 для запуска backend:
-- cd src/backend
-- npm start
+
+-   cd src/backend
+-   npm start
 
 чтобы запустить backend в режиме разработки:
-- cd src/backend
-- npm run dev
+
+-   cd src/backend
+-   npm run dev
 
 ---
-- ♡ beresnevEO ;
-- ♡ zazulyaAA ;
-- ♡ polovnikovAI .
+
+-   ♡ beresnevEO ;
+-   ♡ zazulyaAA ;
+-   ♡ polovnikovAI .
 
 <br>
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=polovnikovAI&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
