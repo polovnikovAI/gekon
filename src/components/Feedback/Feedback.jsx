@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import cl from './Feedback.module.css';
+import cl from './Feedback.module.sass';
 import MyInput from '../UI/MyInput/MyInput';
 import MyButton from '../UI/MyButton/MyButton';
 import MyTextArea from '../UI/MyTextArea/MyTextArea';
@@ -57,7 +57,7 @@ const Feedback = () => {
                     Связь с нами
                 </div>
                 <div className={cl.backgroundFeedbackForm}>
-                    <form action='' className={cl.feedbackForm}>
+                    <form action='' method="post" className={cl.feedbackForm}>
                         <div className={cl.feedbackUnit}>
                             <div className={cl.feedbackQuestion}>
                                 Как к Вам обращаться?
@@ -120,7 +120,7 @@ const Feedback = () => {
             <GModal
                 visible = {emptyQuestionModal}
                 setVisible = {setEmptyQuestionModal}>
-                <div style={{fontSize:'25px' , marginTop: '30%'}}>поле "Ваш вопрос" - не может быть пустым</div>
+                <div style={{fontSize:'25px' , marginTop: '30%'}}>Поле "Ваш вопрос" - не может быть пустым</div>
             </GModal>
 
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './productCard.module.css';
+import classes from './productCard.module.sass';
 
 
 const ProductCard = ({data, title, img}) => {

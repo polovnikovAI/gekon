@@ -1,5 +1,5 @@
 import React from 'react';
-import cl from'./Footer.module.css'
+import cl from'./Footer.module.sass'
 import { Link as LinkScroll } from 'react-scroll';
 
 const Footer = () => {
@@ -8,7 +8,7 @@ const Footer = () => {
             <div className={cl.container}>
                 <div className={cl.info}>
                     <div className={cl.socials}>
-                        <p>Мы в социальных сетях:</p>
+                        <p className={cl.socialsTitle}>Мы в социальных сетях:</p>
                         <div className={cl.socialFacebook}>
                             <a href="https://www.facebook.com/gekoncustoms/" target="_blank" rel="noreferrer">Facebook*</a>
                         </div>
@@ -20,7 +20,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className={cl.connections}>
-                        <p>Связаться с нами:</p>
+                        <p className={cl.connectionsTitle}>Связаться с нами:</p>
                         <div className={cl.connectionRequest}>
                             <LinkScroll to="moduleContacts" spy={true} smooth={true} offset={-100} duration={600}>Оставить заявку</LinkScroll>
                         </div>

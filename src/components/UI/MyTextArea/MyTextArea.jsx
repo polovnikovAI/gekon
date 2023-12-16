@@ -1,5 +1,5 @@
 import React from 'react';
-import cl from './MyTextArea.module.css'
+import cl from './MyTextArea.module.sass'
 
 const MyTextArea = (children) => {
     return (

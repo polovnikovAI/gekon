@@ -1,5 +1,5 @@
 import React from 'react';
-import cl from './MyButton.module.css'
+import cl from './MyButton.module.sass'
 
 const MyButton = ({children, ...props}) => {
     return (
