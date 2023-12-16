@@ -13,24 +13,24 @@ const Feedback = () => {
     const [topic, setTopic] = useState('');
     const [question, setQuestion] = useState('');
     const [modal, setModal] = useState('')
-    const [emptyQuestionModal , setEmptyQuestionModal ] = useState('')
+    const [emptyQuestionModal, setEmptyQuestionModal] = useState('')
 
     const functionButton = (e) => {
         e.preventDefault();
-        if (email === 'зарегистрируйтесь')
-        {
+        if (email === 'зарегистрируйтесь') {
             setModal(true)
         }
         else {
             if (question.replaceAll(' ', '') !== '') {
-                fetch(`/api/user/feedback`,{ 
+                fetch(`/api/user/feedback`, {
                     method: 'POST',
 
                     headers: {
                         'Content-Type': 'application/json;charset=utf-8'
                     },
 
-                    body: JSON.stringify(application)})
+                    body: JSON.stringify(application)
+                })
 
                 setName('');
                 setTopic('');
@@ -41,7 +41,7 @@ const Feedback = () => {
             }
         }
     }
-    
+
 
     let application = {
         name: name,
@@ -62,7 +62,7 @@ const Feedback = () => {
                             <div className={cl.feedbackQuestion}>
                                 Как к Вам обращаться?
                             </div>
-                            <MyInput 
+                            <MyInput
                                 value={name}
                                 placeholder='Алексей'
                                 onChange={event => setName(event.target.value)}
@@ -70,7 +70,7 @@ const Feedback = () => {
                         </div>
                         <div className={cl.feedbackUnit}>
                             <div className={cl.feedbackQuestion}>
-                            Ваш email :
+                                Ваш email :
                             </div>
                             <MyInput
                                 disabled
@@ -83,8 +83,8 @@ const Feedback = () => {
                             <div className={cl.feedbackQuestion}>
                                 Тема обращения :
                             </div>
-                            <MyInput 
-                                value={topic} 
+                            <MyInput
+                                value={topic}
                                 placeholder='Заказать колонки'
                                 onChange={event => setTopic(event.target.value)}
                             />
@@ -93,15 +93,15 @@ const Feedback = () => {
                             <div className={cl.feedbackQuestion}>
                                 Ваш вопрос :
                             </div>
-                            <MyTextArea 
+                            <MyTextArea
                                 value={question}
                                 placeholder='Можем обсудить детали заказа ?'
                                 onChange={event => setQuestion(event.target.value)}
                             />
                         </div>
                         <div className={cl.feedbackFooter}>
-                        <MyButton
-                                type="submit" 
+                            <MyButton
+                                type="submit"
                                 onClick={functionButton}
                             >
                                 Отправить
@@ -112,15 +112,15 @@ const Feedback = () => {
             </div>
 
             <GModal
-                visible = {modal}
-                setVisible = {setModal}>
-                <FeedbackAlert/>
+                visible={modal}
+                setVisible={setModal}>
+                <FeedbackAlert />
             </GModal>
 
             <GModal
-                visible = {emptyQuestionModal}
-                setVisible = {setEmptyQuestionModal}>
-                <div style={{fontSize:'25px' , marginTop: '30%'}}>Поле "Ваш вопрос" - не может быть пустым</div>
+                visible={emptyQuestionModal}
+                setVisible={setEmptyQuestionModal}>
+                <div style={{ fontSize: '25px', marginTop: '30%' }}>Поле "Ваш вопрос" - не может быть пустым</div>
             </GModal>
 
         </div>

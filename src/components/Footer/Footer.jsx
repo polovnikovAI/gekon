@@ -1,5 +1,5 @@
 import React from 'react';
-import cl from'./Footer.module.sass'
+import cl from './Footer.module.sass'
 import { Link as LinkScroll } from 'react-scroll';
 
 const Footer = () => {
