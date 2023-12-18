@@ -10,7 +10,6 @@
     height: 100%;
 }
 
-
 .lineImage {
     position: fixed;
     top: 80px;
@@ -20,9 +19,7 @@
     background-size: cover;
     background-position: right;
     height: 100%;
-
 }
-
 
 .line {
     position: fixed;
@@ -36,9 +33,6 @@
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-
-
-
 .content {
     position: relative;
     top: 90px;
@@ -46,11 +40,7 @@
     max-width: var(--content-width);
     font-size: 20px;
     color: #fff;
-
 }
-
-
-
 
 .greetingsImage {
     background-image: url('../photos/restorationDiatone2017/2017-chopchop-1026.jpg');
@@ -71,7 +61,6 @@
     background-color: rgba(0, 0, 0, 0.4);
     font-weight: 600;
 }
-
 
 h1 {
     margin: 0 0 20px 0;
@@ -97,8 +86,6 @@ h1 {
     width: 10px;
 }
 
-
-
 .text {
     padding-left: 20px;
     padding-top: 5px;
@@ -113,16 +100,12 @@ h1 {
     overflow: auto;
 }
 
-
-
-
 .botButton {
     position: fixed;
     left: var(--button-position);
     bottom: 20px;
     display: flex;
     flex-direction: column;
-
 }
 
 .topButton {
@@ -131,11 +114,7 @@ h1 {
     top: 100px;
     display: flex;
     flex-direction: column;
-
 }
-
-
-
 
 .alert-enter {
     transform: translateY(200px);
@@ -158,16 +137,10 @@ h1 {
     opacity: 0;
 }
 
-
-
 @media screen and (max-width: 1200px) {
-
-
     .lineImage {
         min-width: 180px;
-
     }
-
 
     .line {
         min-width: 180px;
@@ -187,17 +160,12 @@ h1 {
     .button {
         width: 115px;
     }
-
 }
 
 @media screen and (max-width: 500px) {
-
-
     .lineImage {
         min-width: 100px;
-
     }
-
 
     .line {
         min-width: 100px;
@@ -224,7 +192,6 @@ h1 {
         bottom: 20px;
         display: flex;
         flex-direction: column;
-
     }
 
     .topButton {
@@ -233,7 +200,6 @@ h1 {
         top: 100px;
         display: flex;
         flex-direction: column;
-
     }
 
     .greetings {
