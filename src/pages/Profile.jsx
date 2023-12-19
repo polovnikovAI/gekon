@@ -3,7 +3,6 @@ import MyButton from '../components/UI/MyButton/MyButton'
 import { Link } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
 import '../styles/Profile.css'
-import { Button } from 'react-scroll'
 
 function Profile() {
     const [orderHistoryActive, setOrderHistoryActive] = useState(false)
