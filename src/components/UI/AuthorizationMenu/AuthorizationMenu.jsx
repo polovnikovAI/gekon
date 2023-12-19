@@ -1,15 +1,13 @@
-import { useEffect, useState } from "react";
-import GInput from "../GInput/GInput";
-import MyButton from "../MyButton/MyButton";
-import classes from "./AuthorizationMenu.module.sass";
-import './AuthorizationMenu.sass';
-import { Link } from "react-router-dom";
-import { spaceCkecker } from "../../SpaceChecker";
-import { mailCkecker } from "../../mailChecker";
-
+import { useEffect, useState } from 'react'
+import GInput from '../GInput/GInput'
+import MyButton from '../MyButton/MyButton'
+import classes from './AuthorizationMenu.module.sass'
+import './AuthorizationMenu.sass'
+import { Link } from 'react-router-dom'
+import { spaceCkecker } from '../../SpaceChecker'
+import { mailCkecker } from '../../mailChecker'
 
 const AuthorizationMenu = () => {
-
     // переменные для работы с visible
     const [registrationVisible, setRegistrationVisible] = useState(false)
     const [passwdVisible, setPasswdVisible] = useState(false)
@@ -34,7 +32,6 @@ const AuthorizationMenu = () => {
     const [id, setId] = useState('')
 
     const [profileLink, setProfileLink] = useState('')
-
 
     // без этого при нажатии на кнопку он не выводит графу для регистрации
 
@@ -66,114 +63,94 @@ const AuthorizationMenu = () => {
         mailExistsCheckClasses.push('active')
     }
 
-
     useEffect(() => {
-        if (!spaceCkecker(mail))
-            setSapceAlert(true)
-        else if (!spaceCkecker(passwd))
-            setSapceAlert(true)
-        else if (!spaceCkecker(checkPasswd))
-            setSapceAlert(true)
-        else
-            setSapceAlert(false)
-
-    });
-
-
+        if (!spaceCkecker(mail)) setSapceAlert(true)
+        else if (!spaceCkecker(passwd)) setSapceAlert(true)
+        else if (!spaceCkecker(checkPasswd)) setSapceAlert(true)
+        else setSapceAlert(false)
+    })
 
     const AuthorizationFunction = (event) => {
-        event.preventDefault();
+        event.preventDefault()
         if (!spaceAlert) {
             if (registrationVisible === true) {
-                setRegistrationVisible(false);
+                setRegistrationVisible(false)
                 setMailExistsCheck(false)
-            }
-            else {
+            } else {
                 if (mailCkecker(mail)) {
                     setMailExistsCheck(false)
-                    setPasswdVisible(false);
-                    setSuccessRegistration(false);
+                    setPasswdVisible(false)
+                    setSuccessRegistration(false)
                     setMailCheck(false)
-                    setProfileLink('');
+                    setProfileLink('')
 
                     fetch(`/api/user/${mail}/${passwd}`)
-                        .then(response => response.json())
-                        .then(response => {
-
+                        .then((response) => response.json())
+                        .then((response) => {
                             if (response.length > 0) {
                                 // если верно указаны данные сохраняем id
-                                setAlertVisible(false);
-                                setId(response[0].user_id);
-                                setProfileLink('/profile');
-                                localStorage.setItem('ID', response[0].user_id);
-                                localStorage.setItem('Mail', mail);
+                                setAlertVisible(false)
+                                setId(response[0].user_id)
+                                setProfileLink('/profile')
+                                localStorage.setItem('ID', response[0].user_id)
+                                localStorage.setItem('Mail', mail)
                                 // чтобы пропала модалка
-                                window.location.reload(false);
-                            }
-
-                            else {
+                                window.location.reload(false)
+                            } else {
                                 if (alertVisible === false) {
-                                    setAlertVisible(true);
+                                    setAlertVisible(true)
                                     alertClasses.push('active')
                                 }
-                                localStorage.clear();
+                                localStorage.clear()
                             }
                         })
-                }
-                else
-                    setMailExistsCheck(true)
+                } else setMailExistsCheck(true)
             }
         }
     }
 
     const RegistrationFunction = (event) => {
-        event.preventDefault();
+        event.preventDefault()
 
         if (!spaceAlert) {
             if (registrationVisible === false) {
-                setRegistrationVisible(true);
+                setRegistrationVisible(true)
                 registrationClasses.push('active')
                 setMailExistsCheck(false)
-            }
-
-            else {
-
+            } else {
                 if (mailCkecker(mail)) {
                     setMailExistsCheck(false)
                     setAlertVisible(false)
-
 
                     if (passwd === checkPasswd) {
                         setPasswdVisible(false)
                         setMailCheck(false)
                         setSuccessRegistration(false)
 
-                        let userObject = {
+                        const userObject = {
                             mail: mail,
-                            passwd: passwd
-                        };
-
+                            passwd: passwd,
+                        }
 
                         fetch('/api/registration', {
                             method: 'POST',
 
                             headers: {
-                                'Content-Type': 'application/json;charset=utf-8'
+                                'Content-Type': 'application/json;charset=utf-8',
                             },
 
-                            body: JSON.stringify(userObject)
-                        }).then(response => { (response.status === 200) ? setSuccessRegistration(true) : setMailCheck(true) })
+                            body: JSON.stringify(userObject),
+                        }).then((response) => {
+                            response.status === 200 ? setSuccessRegistration(true) : setMailCheck(true)
+                        })
                         // 500 ошибка, 200 номарльно
-                    }
-                    else {
+                    } else {
                         if (passwdVisible === false) {
-                            setPasswdVisible(true);
+                            setPasswdVisible(true)
                             passwdClasses.push('active')
                         }
                     }
-                }
-                else
-                    setMailExistsCheck(true)
+                } else setMailExistsCheck(true)
             }
         }
     }
@@ -181,23 +158,36 @@ const AuthorizationMenu = () => {
     return (
         <div className={classes.authorizationMenu}>
             <div className={classes.content}>
-                <div className={classes.greetings}>
-                    Добрейшего времени суток!
-                </div>
+                <div className={classes.greetings}>Добрейшего времени суток!</div>
                 <div className={classes.input}>
-                    <div className={successRegistrationClasses} style={{ fontSize: '24px', color: 'green' }}>
+                    <div
+                        className={successRegistrationClasses}
+                        style={{ fontSize: '24px', color: 'green' }}
+                    >
                         Регистрация прошла успешно, авторизируйтесь
                     </div>
-                    <div className={mailExistsCheckClasses} style={{ fontSize: '24px', color: 'green' }}>
+                    <div
+                        className={mailExistsCheckClasses}
+                        style={{ fontSize: '24px', color: 'green' }}
+                    >
                         Укажите правильную почту
                     </div>
-                    <div className={spaceAlertClasses} style={{ fontSize: '24px', color: 'red' }}>
+                    <div
+                        className={spaceAlertClasses}
+                        style={{ fontSize: '24px', color: 'red' }}
+                    >
                         Пароль или почта не должны содеражать пробелов
                     </div>
-                    <div className={mailCkeckClasses} style={{ fontSize: '24px', color: 'red' }}>
+                    <div
+                        className={mailCkeckClasses}
+                        style={{ fontSize: '24px', color: 'red' }}
+                    >
                         Пользователь с такой почтой уже существует
                     </div>
-                    <div className={alertClasses} style={{ fontSize: '24px', color: 'red' }}>
+                    <div
+                        className={alertClasses}
+                        style={{ fontSize: '24px', color: 'red' }}
+                    >
                         Неверно указана почта или пароль
                     </div>
                     <GInput
@@ -211,7 +201,10 @@ const AuthorizationMenu = () => {
                         onChange={(event) => setPasswd(event.target.value)}
                     />
 
-                    <div className={passwdClasses} style={{ fontSize: '24px', color: 'red' }}>
+                    <div
+                        className={passwdClasses}
+                        style={{ fontSize: '24px', color: 'red' }}
+                    >
                         Пароли не совпадают
                     </div>
 
@@ -219,26 +212,29 @@ const AuthorizationMenu = () => {
                         <GInput
                             type='text'
                             placeholder='Повторите пароль'
-                            onChange={(event) => setCheckPasswd(event.target.value)} />
+                            onChange={(event) => setCheckPasswd(event.target.value)}
+                        />
                     </div>
-
                 </div>
             </div>
             <div className={classes.button}>
-                <MyButton
-                    onClick={AuthorizationFunction}>
-                    <div className={classes.buttonText}><Link to={profileLink} style={{ color: 'black' }}> Авторизироваться </Link></div>
+                <MyButton onClick={AuthorizationFunction}>
+                    <div className={classes.buttonText}>
+                        <Link
+                            to={profileLink}
+                            style={{ color: 'black' }}
+                        >
+                            Авторизироваться
+                        </Link>
+                    </div>
                 </MyButton>
 
-                <MyButton
-                    onClick={RegistrationFunction}>
+                <MyButton onClick={RegistrationFunction}>
                     <div className={classes.buttonText}>Зарегистрироваться</div>
                 </MyButton>
             </div>
         </div>
-    );
+    )
+}
 
-};
-
-
-export default AuthorizationMenu;
+export default AuthorizationMenu

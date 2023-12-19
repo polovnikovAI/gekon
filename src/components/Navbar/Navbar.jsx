@@ -1,26 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import logo from '../../photos/logo/gekon_logo_old.png';
-import cl from './Navbar.module.sass';
-import GModal from '../UI/GModal/GModal';
-import { Link } from 'react-router-dom';
-import { Link as LinkScroll } from 'react-scroll';
-import { animateScroll } from 'react-scroll';
-import AuthorizationMenu from '../UI/AuthorizationMenu/AuthorizationMenu';
-import icon from '../../photos/logo/burger-menu.svg';
-import classNames from 'classnames';
-import LinkScrollSettings from './LinkScrollSettings.ts';
+import React, { useState, useEffect } from 'react'
+import logo from '../../photos/logo/gekon_logo_old.png'
+import cl from './Navbar.module.sass'
+import GModal from '../UI/GModal/GModal'
+import { Link } from 'react-router-dom'
+import { Link as LinkScroll } from 'react-scroll'
+import { animateScroll } from 'react-scroll'
+import AuthorizationMenu from '../UI/AuthorizationMenu/AuthorizationMenu'
+import icon from '../../photos/logo/burger-menu.svg'
+import classNames from 'classnames'
+import LinkScrollSettings from './LinkScrollSettings.ts'
 
 const Navbar = () => {
-
-    const [modal, setModal] = useState(false);
-    const [profileLink, setProfileLink] = useState('');
-    const [link, setLink] = useState((localStorage.getItem('ID') === null) ? false : true);
+    const [modal, setModal] = useState(false)
+    const [profileLink, setProfileLink] = useState('')
+    const [link, setLink] = useState(localStorage.getItem('ID') === null ? false : true)
 
     useEffect(() => {
         if (link === false) {
             setProfileLink('')
-        }
-        else if (link === true) {
+        } else if (link === true) {
             setProfileLink('/profile')
         }
     }, [link])
@@ -32,57 +30,85 @@ const Navbar = () => {
     }
 
     const scrollGekon = (options) => {
-        animateScroll.scrollToTop(options);
+        animateScroll.scrollToTop(options)
     }
 
     // для адаптивного меню
-    const [burgerClicked, setBurgerClicked] = useState(false);
-    const [isAuth, setIsAuth] = useState((localStorage.getItem('ID') === null) ? false : true);
-
+    const [burgerClicked, setBurgerClicked] = useState(false)
+    const [isAuth, setIsAuth] = useState(localStorage.getItem('ID') === null ? false : true)
 
     return (
         <div className={cl.navigation}>
-            <Link to="/home">
-                <img src={logo} alt="Gekon" className={cl.logo} onClick={() => scrollGekon(scrollOptions)} />
+            <Link to='/home'>
+                <img
+                    src={logo}
+                    alt='Gekon'
+                    className={cl.logo}
+                    onClick={() => scrollGekon(scrollOptions)}
+                />
             </Link>
             <div className={burgerClicked ? classNames(cl.navbar, cl.responsive) : cl.navbar}>
-                <img src={icon} alt="stripes"
-                    className={burgerClicked ? classNames(cl.burgerIcon, cl.burgerClickedActive) : classNames(cl.burgerIcon)}
+                <img
+                    src={icon}
+                    alt='stripes'
+                    className={
+                        burgerClicked ? classNames(cl.burgerIcon, cl.burgerClickedActive) : classNames(cl.burgerIcon)
+                    }
                     onClick={() => {
-                        setBurgerClicked(!burgerClicked);
+                        setBurgerClicked(!burgerClicked)
                     }}
                 />
-                <LinkScroll to="moduleAbout" {...LinkScrollSettings} className={burgerClicked ? classNames(cl.navbarItem, cl.responsive) : cl.navbarItem}>
+                <LinkScroll
+                    to='moduleAbout'
+                    {...LinkScrollSettings}
+                    className={burgerClicked ? classNames(cl.navbarItem, cl.responsive) : cl.navbarItem}
+                >
                     О нас
                 </LinkScroll>
-                <LinkScroll to="moduleSpeakers" {...LinkScrollSettings} offset={-95} className={burgerClicked ? classNames(cl.navbarItem, cl.responsive) : cl.navbarItem}>
+                <LinkScroll
+                    to='moduleSpeakers'
+                    {...LinkScrollSettings}
+                    offset={-95}
+                    className={burgerClicked ? classNames(cl.navbarItem, cl.responsive) : cl.navbarItem}
+                >
                     Колонки
                 </LinkScroll>
-                <LinkScroll to="moduleServices" {...LinkScrollSettings} className={burgerClicked ? classNames(cl.navbarItem, cl.responsive) : cl.navbarItem}>
+                <LinkScroll
+                    to='moduleServices'
+                    {...LinkScrollSettings}
+                    className={burgerClicked ? classNames(cl.navbarItem, cl.responsive) : cl.navbarItem}
+                >
                     Услуги
                 </LinkScroll>
-                <LinkScroll to="moduleContacts" {...LinkScrollSettings} className={burgerClicked ? classNames(cl.navbarItem, cl.responsive) : cl.navbarItem}>
+                <LinkScroll
+                    to='moduleContacts'
+                    {...LinkScrollSettings}
+                    className={burgerClicked ? classNames(cl.navbarItem, cl.responsive) : cl.navbarItem}
+                >
                     Контакты
                 </LinkScroll>
 
                 <span
-                    className={burgerClicked ? classNames(cl.navbarItem, cl.responsive, cl.burgerActive) : cl.navbarItem}
+                    className={
+                        burgerClicked ? classNames(cl.navbarItem, cl.responsive, cl.burgerActive) : cl.navbarItem
+                    }
                     onClick={(event) => {
-                        event.preventDefault();
+                        event.preventDefault()
                         if (localStorage.getItem('ID') === null) {
-                            setLink(false);
-                            setModal(true);
-                        }
-                        else {
+                            setLink(false)
+                            setModal(true)
+                        } else {
                             setLink(true)
-                            setIsAuth(true);
+                            setIsAuth(true)
                         }
                     }}
                 >
                     <Link
                         to={profileLink}
                         className={isAuth ? cl.personalAreaAuth : cl.personalAreaNotAuth}
-                    >{isAuth ? ' ' : 'Личный кабинет'}</Link>
+                    >
+                        {isAuth ? ' ' : 'Личный кабинет'}
+                    </Link>
                 </span>
             </div>
 
@@ -91,10 +117,9 @@ const Navbar = () => {
                 setVisible={setModal}
             >
                 <AuthorizationMenu />
-
             </GModal>
         </div>
-    );
-};
+    )
+}
 
-export default Navbar;
+export default Navbar

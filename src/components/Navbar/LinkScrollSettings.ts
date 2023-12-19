@@ -5,4 +5,4 @@ const LinkScrollSettings = {
     duration: 600,
 }
 
-export default LinkScrollSettings;
+export default LinkScrollSettings
