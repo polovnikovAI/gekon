@@ -1,5 +1,5 @@
 .gModal {
-    position : fixed;
+    position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
@@ -13,7 +13,7 @@
     pointer-events: none;
 }
 
-.gModalContent{
+.gModalContent {
     padding: 30px;
     background-color: white;
     border-radius: 16px;
@@ -23,8 +23,8 @@
     transition: 0.44s all;
 }
 
-.gModalContent.active{
-    transform: scale(1)
+.gModalContent.active {
+    transform: scale(1);
 }
 
 .gModal.active {
@@ -32,12 +32,11 @@
     justify-content: center;
     align-items: center;
     opacity: 1;
-    pointer-events: all
-
+    pointer-events: all;
 }
 
 @media screen and (max-width: 1200px) {
-    .gModalContent{
+    .gModalContent {
         padding: 15px;
         min-height: 330px;
     }

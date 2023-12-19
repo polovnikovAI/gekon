@@ -1,25 +1,25 @@
 {
-  "engines" : { 
-		"npm" : ">=9.5.1 <10.1.0",
-		"node" : ">=18.16.0 <20.8.0"
-	},
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "backend.js",
-  "scripts": {
-    "start": "node backend.js",
-    "dev": "nodemon backend.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.2",
-    "path": "^0.12.7",
-    "pg": "^8.11.3"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  }
+    "engines": {
+        "npm": ">=9.5.1 <10.1.0",
+        "node": ">=18.16.0 <20.8.0"
+    },
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "backend.js",
+    "scripts": {
+        "start": "node backend.js",
+        "dev": "nodemon backend.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.18.2",
+        "path": "^0.12.7",
+        "pg": "^8.11.3"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    }
 }

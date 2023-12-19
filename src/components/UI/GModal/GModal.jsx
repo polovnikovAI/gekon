@@ -1,8 +1,7 @@
-import React from "react";
+import React from 'react'
 import classes from './GModal.module.css'
 
 const GModal = ({ children, visible, setVisible }) => {
-
     const rootClasses = [classes.gModal]
     const contenClasses = [classes.gModalContent]
     if (visible) {
@@ -10,25 +9,21 @@ const GModal = ({ children, visible, setVisible }) => {
         contenClasses.push(classes.active)
     }
 
-
     return (
-
-
-        <div className={rootClasses.join(' ')} onClick={() => setVisible(false)}>
+        <div
+            className={rootClasses.join(' ')}
+            onClick={() => setVisible(false)}
+        >
             {/* для выхода из модалки по клику не по ней
-            */}
-            <div className={contenClasses.join(" ")} onClick={(event) => event.stopPropagation()}>
-
+             */}
+            <div
+                className={contenClasses.join(' ')}
+                onClick={(event) => event.stopPropagation()}
+            >
                 {children}
-
             </div>
-
         </div>
+    )
+}
 
-
-    );
-
-};
-
-
-export default GModal;
+export default GModal

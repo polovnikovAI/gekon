@@ -1,10 +1,14 @@
-import React from 'react';
+import React from 'react'
 import cl from './MyTextArea.module.sass'
 
 const MyTextArea = (children) => {
     return (
-        <textarea type="text" className={cl.myTextArea} {...children} />
-    );
-};
+        <textarea
+            type='text'
+            className={cl.myTextArea}
+            {...children}
+        />
+    )
+}
 
-export default MyTextArea;
+export default MyTextArea
